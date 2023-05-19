@@ -95,42 +95,13 @@ class ModelPersonne {
         $this->specialite = $specialite;
     }
     
-    public static function getAllAdministrateur(){
+    public static function getAll($param){
         try{
            $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = 0";
+            $query = "select id, nom, prenom, adresse from personne where statut = $param";
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
-            return $results;
-        } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-            return NULL;
-        } 
-    }
-    
-    
-    public static function getAllPraticien(){
-        try{
-           $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = 1";
-            $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
-            return $results;
-        } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-            return NULL;
-        } 
-    }
-    
-    public static function getAllPatient(){
-        try{
-           $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = 2";
-            $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
