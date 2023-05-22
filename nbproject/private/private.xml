@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/index.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/outil/doctolib_base.sql</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/Model.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPatient.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/config.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAdministrateur.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPraticien.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurSpecialites.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/ModelPersonne.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAccueil.php</file>
         </group>
     </open-files>
 </project-private>

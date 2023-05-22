@@ -6,7 +6,7 @@ require_once '../model/ModelSpecialite';
 require_once '../model/ModelRendezvous';
 
 
-class ControllerAdministrateur {
+class ControleurrAdministrateur {
     
     public static function administrateurInfo(){
         $results_specialite = ModelSpecialite::getAll();
@@ -17,6 +17,9 @@ class ControllerAdministrateur {
         
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewInfo.php';
+        if (DEBUG){
+            echo("ControleurAdministrateur : administrateurInfo : vue = $vue");
+        }
         require ($vue);
     }
 }

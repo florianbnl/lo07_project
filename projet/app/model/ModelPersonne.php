@@ -104,7 +104,7 @@ class ModelPersonne {
             $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
             return $results;
         } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;
         } 
     }
@@ -118,7 +118,35 @@ class ModelPersonne {
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
+    }
+    
+    public static function getPersonneInfo(){
+        try{
+            $database = Model::getInstance();
+            $query = "select * from personne where id =" . $_SESSION["id"];
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelProducteur");
+            return $results;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
+    }
+    
+    public static function getPraticiensInfo(){
+        try{
+            $database = Model::getInstance();
+            $query = "select nom, prenom, specialite_id from personne where status = 1";
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (Exception $ex) {
+             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;
         }
     }
