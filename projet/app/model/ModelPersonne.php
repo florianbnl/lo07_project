@@ -189,6 +189,27 @@ class ModelPersonne {
         }
         
     }
+    
+    public static function getLogin2($login){
+        try{
+            $database = Model::getInstance();
+            $query = "select count(id) where login = :login";
+            $statement = $database->prepare($query);
+            $statement->exectute([
+                'login' => $login,
+            ]);
+            $tuple = $statement->fetch();
+            if ($tuple['0']==0){
+                $results=0;
+            }else{
+                $results = 1;
+            }
+            return $results;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
+    }
 
 
 }
