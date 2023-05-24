@@ -166,6 +166,29 @@ class ModelPersonne {
             return NULL;
         }
     }
+    
+    public static function getLoginPassword($login, $password){
+        try{
+            $database = Model::getInstance();
+            $query = "select count(id) where login = :login and password = :password";
+            $statement = $database->prepare($query);
+            $statement->exectute([
+                'login' => $login,
+                'password' => $password,
+            ]);
+            $tuple = $statement->fetch();
+            if ($tuple['0']==0){
+                $results=0;
+            }else{
+                $results = 1;
+            }
+            return $results;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
+        
+    }
 
 
 }
