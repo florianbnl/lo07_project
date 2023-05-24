@@ -167,7 +167,7 @@ class ModelPersonne {
         }
     }
     
-    public static function getLoginPassword($login, $password){
+    public static function getPasswordLogin($login, $password){
         try{
             $database = Model::getInstance();
             $query = "select count(id) where login = :login and password = :password";
@@ -190,7 +190,7 @@ class ModelPersonne {
         
     }
     
-    public static function getLogin2($login){
+    public static function getVerifyLogin($login){
         try{
             $database = Model::getInstance();
             $query = "select count(id) where login = :login";
