@@ -1,7 +1,7 @@
 
 <!-- ----- debut Model -->
 <?php
-session_start();
+/*session_start();*/
 
 class Model extends PDO {
 
