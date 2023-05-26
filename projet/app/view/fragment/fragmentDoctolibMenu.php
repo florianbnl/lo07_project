@@ -97,8 +97,8 @@
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Se connecter</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="router1.php?action=Login">Login</a></li>
-            <li><a class="dropdown-item" href="router1.php?action=Inscription">S'inscrire</a></li>
-            <li><a class="dropdown-item" href="router1.php?action=Deconnexion">Déconnexion</a></li>
+            <li><a class="dropdown-item" href="router1.php?action=AccueilInscription">S'inscrire</a></li>
+            <li><a class="dropdown-item" href="router1.php?action=AccueilDeconnexion">Déconnexion</a></li>
           </ul>
         </li>
       </ul>

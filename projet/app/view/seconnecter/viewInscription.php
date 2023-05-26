@@ -15,7 +15,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <h4 class="text-danger">Formulaire d'inscription</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='AcceuilInscription'>
+        <input type="hidden" name='action' value='AccueilInscrire'>
         <label class='w-25' for="nom">nom : </label><input type="text" name='nom' value=''> <br/> 
         <label class='w-25' for="prenom">prenom : </label><input type="text" name='prenom' value=''> <br/>
         <label class='w-25' for="adresse">adresse : </label><input type="text" name='adresse' value=''> <br/>
