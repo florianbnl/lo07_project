@@ -246,9 +246,25 @@ class ModelPersonne {
             $_SESSION['login']=$results;
             return $id;
         } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
             return -1;
         }
+    }
+    
+    public static function getPraticienDisponibilite(){
+        try{
+            $database = Model::getInstance();
+            $query = 'select rdv_date from rendrezvous where patient_id = 0';
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO:: FETCH_COLUMN, 0);
+            return $results;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
+            return -1;
+        }
+        
+        
     }
 
 }
