@@ -16,9 +16,9 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='AccueilInscrire'>
-        <label class='w-25' for="nom">nom : </label><input type="text" name='nom' value=''> <br/> 
-        <label class='w-25' for="prenom">prenom : </label><input type="text" name='prenom' value=''> <br/>
-        <label class='w-25' for="adresse">adresse : </label><input type="text" name='adresse' value=''> <br/>
+        <label class='w-25' for="nom">nom : </label><input type="text" name='nom' value='<?php echo($_GET["nom"]) ?>'> <br/> 
+        <label class='w-25' for="prenom">prenom : </label><input type="text" name='prenom' value='<?php echo($_GET["prenom"]) ?>'> <br/>
+        <label class='w-25' for="adresse">adresse : </label><input type="text" name='adresse' value='<?php echo($_GET["adresse"]) ?>'> <br/>
         <label class='w-25' for="login">Label : </label><input type="text" name='login' value=''> <br/>
         <label class='w-25' for="password">password : </label><input type="password" name='password' value=''> <br/> 
         <label for="statut">Votre statut : </label> <select class="form-control" id='statut' name='statut' style="width: 100px">

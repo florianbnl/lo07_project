@@ -7,7 +7,7 @@ class ControleurPraticien {
         $results = ModelPersonne::getPraticiensInfo();
         
         include 'config.php';
-        $vue = $root . '/app/view/praticien/viewPraticienSpecialites';
+        $vue = $root . '/app/view/administrateur/viewPraticien';
         if (DEBUG){
             echo("ControleurPraticien : PraticienreadSpecialites : vue = $vue");
         }

@@ -15,8 +15,8 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <h4 class="text-danger">Formulaire de connexion</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='AcceuilLogin'>
-        <label class='w-25' for="login">Label : </label><input type="text" name='login' value=''> <br/>
+        <input type="hidden" name='action' value='AcceuilLogined'>
+        <label class='w-25' for="login">login : </label><input type="text" name='login' value='<?php echo($_GET['login'])?>'> <br/>
         <label class='w-25' for="password">password : </label><input type="password" name='password' value=''> <br/> 
       </div>
       <p/><br/>

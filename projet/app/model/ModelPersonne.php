@@ -178,11 +178,16 @@ class ModelPersonne {
             ]);
             $tuple = $statement->fetch();
             if ($tuple['0']==0){
-                $results=0;
+                $verif=0;
             }else{
-                $results = 1;
+                $verif = 1;
+                $query = "select * from personne where login = $login";
+                $statement = $database->prepare($query);
+                $statement->exectute();
+                $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
+                $_SESSION['login'] = $results;
             }
-            return $results;
+            return $verif;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;
@@ -238,7 +243,7 @@ class ModelPersonne {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
-            $_SESSION[$id]=$results;
+            $_SESSION['login']=$results;
             return $id;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());

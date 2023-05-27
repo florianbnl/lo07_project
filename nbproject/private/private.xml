@@ -6,11 +6,10 @@
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPatient.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibHeader.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurSpecialites.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewIncription.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewInscription.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAccueil.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibFooter.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/Administrateur/viewId.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/config.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAdministrateur.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPraticien.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibJumbotron.html</file>
@@ -29,7 +28,6 @@
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/index.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewLogin.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/Model.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewDeconnexion.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/ModelPersonne.php</file>
         </group>
     </open-files>
