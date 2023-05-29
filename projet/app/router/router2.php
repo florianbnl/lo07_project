@@ -16,33 +16,42 @@ $action = htmlspecialchars($param["action"]);
 
 // --- Liste des méthodes autorisées
 switch ($action) {
- case "vinReadAll" :
- case "vinReadOne" :
- case "vinReadId" :
- case "vinCreate" :
- case "vinCreated" :
-  ControllerVin::$action();
-  break;
+ case "DoctolibAccueil":
+ case "AccueilDeconnexion":
+ case "AccueilInscription":
+ case "AccueilInscription":
+ case "AccueilInscrire":
+ case "AccueilLogin":
+ case "AccueilLogined":
+     ControleurAccueil::$action();
+     break;
 
- case "producteurReadAll":
- case "producteurReadOne":
- case "producteurReadId":
- case "producteurCreate":
- case "producteurCreated":
- case "producteurReadRegion":
- case "producteurPerRegion":
-     ControllerProducteur::$action();
+ case "AdministrateurInfo":
+     ControleurrAdministrateur::$action();
      break;
  
- case "mesPropositions":
- case "caveAcceuil":
-     ControllerCave::$action();
+ case "PatientReadInfo":
+     ControleurPatient::$action();
+     break;
+ 
+ case "PraticienReadSpecialites":
+ case "PraticienReadDisponibilite":
+ case "PraticienCreate":
+ case "PraticienCreated":
+     ControleurPraticien::$action();
+     break;
+ 
+ case "SpecialitesReadAll":
+ case "SpecialitesReadOne":
+ case "SpecialitesCreate":
+ case "SpecialitesCreated":
+     ControleurSpecialites::$action();
      break;
 
  // Tache par défaut
  default:
-     $action = "caveAccueil";
-     ControllerCave::$action();
+     $action = "DoctolibAccueil";
+     ControllerAccueil::$action();
 }
 ?>
 <!-- ----- Fin Router1 -->

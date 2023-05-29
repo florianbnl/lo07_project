@@ -14,7 +14,7 @@ class ControleurPraticien {
         require ($vue);
     }
     
-    public static function PraticienReadDiponibilite(){
+    public static function PraticienReadDisponibilite(){
         include 'config.php';
         $results = ModelPersonne::getPraticienDisponibilite();
         $vue = $root . '/app/view/praticien/viewDisponibilite.php';
