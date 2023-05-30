@@ -3,34 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/praticien/viewDisponibilite.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/praticien/viewAllPatients.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPatient.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibHeader.html</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/patient/viewAllRdv.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurSpecialites.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewInscription.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAccueil.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibFooter.html</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewPraticien.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/praticien/viewInsert.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurAdministrateur.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/controller/ControleurPraticien.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/praticien/viewAllRdv.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibJumbotron.html</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/outil/doctolib_base.sql</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewInserted.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewAllSpecialite.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/ModelSpecialites.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewInfo.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/fragment/fragmentDoctolibMenu.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/router/router2.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/index.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/seconnecter/viewLogin.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/Model.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewInsert.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/model/ModelPersonne.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/projet/app/view/administrateur/viewId.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/Model.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPraticien.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewInsert.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllRdv.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/seconnecter/viewLogin.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewInfo.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelSpecialites.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibFooter.html</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewId.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibMenu.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewInserted.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelPersonne.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurSpecialites.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibJumbotron.html</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/router/router2.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibHeader.html</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewPraticien.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/outil/doctolib_base.sql</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAdministrateur.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/index.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/seconnecter/viewInscription.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewInsert.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllPatients.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPatient.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/patient/viewAllRdv.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAccueil.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewAllSpecialite.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewDisponibilite.php</file>
         </group>
     </open-files>
 </project-private>
