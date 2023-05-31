@@ -7,7 +7,7 @@ require_once '../model/ModelSpecialites.php';
 
 class ControleurPraticien {
     
-    public static function praticienReadSpecialites(){//à quoi elle sert cette fonction ?
+    public static function praticienReadSpecialites(){
         $results = ModelPersonne::getPraticiensInfo();
         
         include 'config.php';

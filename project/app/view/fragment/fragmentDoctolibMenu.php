@@ -55,27 +55,26 @@
                         echo("<a class='nav-link-dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>administrateur</a>");
                         echo("<ul class='dropdown-menu'>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialitesReadAll'>Liste des spécialités</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=specialiteReadId'>Sélection d'une spécialité par son id</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=specialiteCreate'>Insertion d'un vin</a></li><hr>");
-                        echo("<li><a class='dropdown-item' href='router1?action=personneReadPraticienSpecialite'>Liste des praticiens avec leur spécialité</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=personneReadPraticiensParPatient'>Nombre de praticiens par patient</a></li>hr>");
-                        echo("<li><a class='dropdown-item' href='router1?action=administrateurReadInfo'>Info</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=selectionDUneSpecialite'>Sélection d'une spécialité par son id</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=specialiteCreate'>Insertion d'une spécialité</a></li><hr>");
+                        echo("<li><a class='dropdown-item' href='router1?action=praticienReadSpecialites'>Liste des praticiens avec leur spécialité</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=nombrePraticiensParPatient'>Nombre de praticiens par patient</a></li>hr>");
+                        echo("<li><a class='dropdown-item' href='router1?action=administrateurInfo'>Info</a></li>");
                         break;
                     case 1:
                         echo("<a class='nav-link-dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>praticien</a>");
                         echo("<ul class='dropdown-menu'>");
-                        echo("<li><a class='dropdown-item' href='router1?action=rdvReadDisponibilite'>Liste des disponibilités</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=rdvCreateDisponibilite'>Ajout de nouvelles disponibilités</a></li><hr>");
-                        echo("<li><a class='dropdown-item' href='router1?action=rdvReadListRDV'>Liste des rendez-vous avec le nom des patients</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=rdvReadMesPatients'>Liste de mes patients (sansdoublon)</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=administrateurReadInfo'>Info</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=praticienReadDisponibilite'>Liste des disponibilités</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=praticienCreate'>Ajout de nouvelles disponibilités</a></li><hr>");
+                        echo("<li><a class='dropdown-item' href='router1?action=listeRDVPraticien'>Liste des rendez-vous avec le nom des patients</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=listePatients'>Liste de mes patients (sansdoublon)</a></li>");
                         break;
                     case 2:
                         echo("<a class='nav-link-dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>patient</a>");
                         echo("<ul class='dropdown-menu'>");
-                        echo("<li><a class='dropdown-item' href='router1?action=personneReadId'>MonCompte</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=personneReadRDV'>Liste de mes rendez-vous</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=personneReadPrendreRDV'>Prendre un RDV avec un praticien</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=patientReadInfo'>MonCompte</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=listeRDVPatient'>Liste de mes rendez-vous</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=priseDeRDV'>Prendre un RDV avec un praticien</a></li>");
                         break;
                     
                     default :
