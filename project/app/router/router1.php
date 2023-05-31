@@ -28,31 +28,42 @@ switch ($action) {
      ControleurAccueil::$action();
      break;
 
- case "AdministrateurInfo":
-     ControleurrAdministrateur::$action();
+ case "administrateurInfo":
+ case "listeSpecialites":
+ case "selectionDUneSpecialite":
+ case "specialitesReadOne":
+ case "specialitesCreate":
+ case "specialitesCreated":
+ case "listePraticiensAvecSpecialite":
+ case "nombrePraticiensParPatient":
+     ControleurAdministrateur::$action();
      break;
  
- case "PatientReadInfo":
+ case "patientReadInfo":
+ case "listeRDVPatient":
+ case "priseDeRDV":
      ControleurPatient::$action();
      break;
  
- case "PraticienReadSpecialites":
- case "PraticienReadDisponibilite":
- case "PraticienCreate":
- case "PraticienCreated":
+ case "praticienReadSpecialites":
+ case "praticienReadDisponibilite":
+ case "praticienCreate":
+ case "integrationNouvellesDisponibilites":
+ case "listeRDVPraticien":
+ case "listePatients":
      ControleurPraticien::$action();
      break;
  
- case "SpecialitesReadAll":
- case "SpecialitesReadOne":
- case "SpecialitesCreate":
- case "SpecialitesCreated":
+ case "specialitesReadAll":
+ case "specialitesReadOne":
+ case "specialitesCreate":
+ case "specialitesCreated":
      ControleurSpecialites::$action();
      break;
 
  // Tache par défaut
  default:
-     $action = "DoctolibAccueil";
+     $action = "doctolibAccueil";
      ControleurAccueil::$action();
 }
 ?>

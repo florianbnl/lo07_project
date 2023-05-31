@@ -7,7 +7,7 @@ require_once '../model/ModelSpecialites.php';
 
 class ControleurPraticien {
     
-    public static function PraticienReadSpecialites(){//à quoi elle sert cette fonction ?
+    public static function praticienReadSpecialites(){//à quoi elle sert cette fonction ?
         $results = ModelPersonne::getPraticiensInfo();
         
         include 'config.php';
@@ -18,7 +18,7 @@ class ControleurPraticien {
         require ($vue);
     }
     
-    public static function PraticienReadDisponibilite(){
+    public static function praticienReadDisponibilite(){
         include 'config.php';
         $results = ModelPersonne::getPraticienDisponibilite();//mettre en paramètre l'id du praticien ($_SESSION['id']) ?
         $vue = $root . '/app/view/praticien/viewDisponibilite.php';
@@ -28,7 +28,7 @@ class ControleurPraticien {
         require ($vue);
     }
     
-    public static function PraticienCreate(){// pas plutot 'ajoutDisponibilités' ?
+    public static function praticienCreate(){// pas plutot 'ajoutDisponibilités' ?
         include 'config.php';
         $vue = $root. '/app/view/praticien/viewInsert.php';
         if (DEBUG){
