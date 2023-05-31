@@ -15,7 +15,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <h4 class="text-danger">Sélection spécialité par son id</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='SpecialiteReadOne'>
+        <input type="hidden" name='action' value='specialiteReadOne'>
         <label for="id">id : </label> <select class="form-control" id='id' name='id' style="width: 100px">
             <?php
             foreach ($results as $id) {

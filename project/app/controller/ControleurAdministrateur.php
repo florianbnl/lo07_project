@@ -23,58 +23,6 @@ class ControleurAdministrateur {
         require ($vue);
     }
     
-    public static function listeSpecialites(){
-        $results = ModelSpecialites::getAll();
-        include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewAllSpecialite.php';
-        if (DEBUG){
-            echo("ControleurAdministrateur : administrateurSpecialites : vue = $vue");
-        }
-        require ($vue);
-    }
-    
-    public static function selectionDUneSpecialite(){
-        $results = ModelSpecialites::getAllId();
-
-        // ----- Construction chemin de la vue
-        include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewId.php';
-        require ($vue);
-    }
-
-
-    public static function specialitesReadOne(){
-        $specialite_id = $_GET['id'];
-        $results = ModelSpecialites::getOne($specialite_id);
-        
-        include 'config.php';
-        $vue = $root . 'app/view/administrateur/viewAllSpecialite';
-        if (DEBUG){
-            echo("ControleurSpecialites : SpecialitesReadOne : vue = $vue");
-        }
-        require ($vue);
-    }
-    
-    public static function specialitesCreate(){//copie ControleurSpecialites
-        require 'config.php';
-        $vue = $root . '/app/view/administrateur/viewInsert.php';
-        if (DEBUG){
-            echo("ControleurSpecialites : SpecialitesCreate : vue = $vue");
-        }
-        require ($vue);
-    }
-    
-    public static function specialitesCreated(){//copie ControleurSpecialites
-        $results = ModelSpecialites::insert(htmlspecialchars($_GET['label'])); //'nom' avant que je change
-        
-        include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewInserted.php';
-        if (DEBUG){
-            echo("ControleurSpecialites : SpecialitesCreated : vue = $vue");
-        }
-        require ($vue);
-    }
-    
     public static function listePraticiensAvecSpecialite(){
         $results = ModelPersonne::getAll(1);//1 car on veut les praticiens
         include 'config.php';

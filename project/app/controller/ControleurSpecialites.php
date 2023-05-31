@@ -11,7 +11,7 @@ class ControleurSpecialites {
         include 'config.php';
         $vue = $root . '/app/view/admistrateur/viewAllSpecialite';
         if (DEBUG){
-            echo("ControleurSpecialites : SpecialitesReadAll : vue = $vue");
+            echo("ControleurSpecialites : specialitesReadAll : vue = $vue");
         }
         require ($vue);
     }
@@ -28,6 +28,15 @@ class ControleurSpecialites {
         require ($vue);
     }
     
+    public static function selectionDUneSpecialite(){
+        $results = ModelSpecialites::getAllId();
+
+        // ----- Construction chemin de la vue
+        include 'config.php';
+        $vue = $root . '/app/view/administrateur/viewId.php';
+        require ($vue);
+    }
+    
     public static function specialitesCreate(){
         require 'config.php';
         $vue = $root . '/app/view/administrateur/viewInsert.php';
@@ -38,7 +47,7 @@ class ControleurSpecialites {
     }
     
     public static function specialitesCreated(){
-        $results = ModelSpecialites::insert(htmlspecialchars($_GET['nom']));
+        $results = ModelSpecialites::insert(htmlspecialchars($_GET['label'])); //'nom' avant que je change
         
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewInserted.php';

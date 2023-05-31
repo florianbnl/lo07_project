@@ -29,11 +29,6 @@ switch ($action) {
      break;
 
  case "administrateurInfo":
- case "listeSpecialites":
- case "selectionDUneSpecialite":
- case "specialitesReadOne":
- case "specialitesCreate":
- case "specialitesCreated":
  case "listePraticiensAvecSpecialite":
  case "nombrePraticiensParPatient":
      ControleurAdministrateur::$action();
@@ -58,6 +53,7 @@ switch ($action) {
  case "specialitesReadOne":
  case "specialitesCreate":
  case "specialitesCreated":
+ case "selectionDUneSpecialite":
      ControleurSpecialites::$action();
      break;
 

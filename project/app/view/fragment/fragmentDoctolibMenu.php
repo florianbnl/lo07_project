@@ -54,7 +54,7 @@
                     case 0:
                         echo("<a class='nav-link-dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>administrateur</a>");
                         echo("<ul class='dropdown-menu'>");
-                        echo("<li><a class='dropdown-item' href='router1?action=specialiteReadAll'>Liste des spécialités</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=specialitesReadAll'>Liste des spécialités</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialiteReadId'>Sélection d'une spécialité par son id</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialiteCreate'>Insertion d'un vin</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=personneReadPraticienSpecialite'>Liste des praticiens avec leur spécialité</a></li>");
