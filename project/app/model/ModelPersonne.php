@@ -8,7 +8,7 @@ const PATIENT = 2;
 class ModelPersonne {
     private $id, $nom, $prenom, $adresse, $login, $password, $statut, $specialite;
     
-    public static function __construct($id=null, $nom=null, $prenom=null, $adresse=null, $login=null, $password=null, $statut=null, $specialite=null) {
+    public function __construct($id=null, $nom=null, $prenom=null, $adresse=null, $login=null, $password=null, $statut=null, $specialite=null) {
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;

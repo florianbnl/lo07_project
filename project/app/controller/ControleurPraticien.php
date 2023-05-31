@@ -1,9 +1,10 @@
 <!-- début ControleurPraticien -->
 <?php
 
-require_once '../model/ModelPersonne';
-require_once '../model/ModelSpecialite';
-/*require_once '../model/ModelRendezvous';*/
+require_once '../model/ModelPersonne.php';
+require_once '../model/ModelSpecialites.php';
+/*require_once '../model/ModelRendezvous.php';*/
+
 class ControleurPraticien {
     
     public static function PraticienReadSpecialites(){//à quoi elle sert cette fonction ?

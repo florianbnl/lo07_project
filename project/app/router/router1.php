@@ -18,13 +18,13 @@ $action = htmlspecialchars($param["action"]);
 
 // --- Liste des méthodes autorisées
 switch ($action) {
- case "DoctolibAccueil":
- case "AccueilDeconnexion":
- case "AccueilInscription":
- case "AccueilInscription":
- case "AccueilInscrire":
- case "AccueilLogin":
- case "AccueilLogined":
+ case "doctolibAccueil":
+ case "accueilDeconnexion":
+ case "accueilInscription":
+ case "accueilInscription":
+ case "accueilInscrire":
+ case "accueilLogin":
+ case "accueilLogined":
      ControleurAccueil::$action();
      break;
 
