@@ -5,17 +5,51 @@
 require_once 'Model.php';
 
 class ModelSpecialites {
-    private $specialite = array();
+    public static function getAll(){
+        try {
+            $database = Model::getInstance();
+            $query = "select * from specialite";
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelSpecialites");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
+    
+    // retourne une liste des id
+    public static function getAllId() {
+      try {
+       $database = Model::getInstance();
+       $query = "select id from specialite";
+       $statement = $database->prepare($query);
+       $statement->execute();
+       $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+       return $results;
+      } catch (PDOException $e) {
+       printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+       return NULL;
+      }
+    }
+    
+    public static function getOne($id) {
+        try {
+            $database = Model::getInstance();
+            $query = "select * from specialite where id = :id";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                'id' => $id
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelSpecialite");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+   }
 
- public function __construct() {
-    $this->specialite[0] = "Je ne suis pas praticien";
-    $this->specialite[1] = "Médecin généraliste";
-    $this->specialite[2] = "Infirmier";
-    $this->specialite[3] = "Dentiste";
-    $this->specialite[4] = "Sage-femme";
-    $this->specialite[5] = "Ostéopathe";
-    $this->specialite[6] = "Kinésithérapeute";
-}
 
 }
 

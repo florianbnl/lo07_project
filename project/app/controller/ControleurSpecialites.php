@@ -1,12 +1,12 @@
 <!-- début ControleurSpecialites -->
 <?php
 
-require_once '../model/ModelPersonne.php';
-require_once '../model/ModelSpecialites.php';
-/*require_once '../model/ModelRendezvous.php';*/
+require_once '../model/ModelPersonne';
+require_once '../model/ModelSpecialite';
+/*require_once '../model/ModelRendezvous';*/
 
 class ControleurSpecialites {
-    public static function SpecialitesReadAll() {
+    public static function specialitesReadAll() {
         $results = ModelSpecialites::getAll();
         include 'config.php';
         $vue = $root . '/app/view/admistrateur/viewAllSpecialite';
@@ -14,10 +14,9 @@ class ControleurSpecialites {
             echo("ControleurSpecialites : SpecialitesReadAll : vue = $vue");
         }
         require ($vue);
-        
     }
     
-    public static function SpecialitesReadOne(){
+    public static function specialitesReadOne(){
         $specialite_id = $_GET['id'];
         $results = ModelSpecialites::getOne($specialite_id);
         
@@ -29,7 +28,7 @@ class ControleurSpecialites {
         require ($vue);
     }
     
-    public static function SpecialitesCreate(){
+    public static function specialitesCreate(){
         require 'config.php';
         $vue = $root . '/app/view/administrateur/viewInsert.php';
         if (DEBUG){
@@ -38,7 +37,7 @@ class ControleurSpecialites {
         require ($vue);
     }
     
-    public static function SpecialitesCreated(){
+    public static function specialitesCreated(){
         $results = ModelSpecialites::insert(htmlspecialchars($_GET['nom']));
         
         include 'config.php';

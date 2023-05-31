@@ -6,10 +6,9 @@ const ADMINISTRATEUR = 0;
 const PRATICIEN = 1;
 const PATIENT = 2;
 class ModelPersonne {
-    
     private $id, $nom, $prenom, $adresse, $login, $password, $statut, $specialite;
     
-    public function __construct($id=null, $nom=null, $prenom=null, $adresse=null, $login=null, $password=null, $statut=null, $specialite=null) {
+    public static function __construct($id=null, $nom=null, $prenom=null, $adresse=null, $login=null, $password=null, $statut=null, $specialite=null) {
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -114,7 +113,7 @@ class ModelPersonne {
     public static function getOne($id){
         try {
             $database = Model::getInstance();
-            $query = "select * from vin where id = :id";
+            $query = "select * from personne where id = :id";
             $statement = $database->prepare($query);
             $statement->execute([
               'id' => $id
@@ -127,13 +126,13 @@ class ModelPersonne {
            }
     }
 
-    public static function getPraticiensParPatient(){
+    public static function getNombrePraticiensParPatient(){
         try{
             $database = Model::getInstance();
-            $query = "select count(id where statut = 1), count(id where statut = 2 from personne";
+            $query = "select count(id where statut = 1), count(id where statut = 2 from personne";//pas sûr de la formule --> group by ? - récupérer nom et prénom des patients puis le nb de praticiens
             $statement = $database->prepare($query);
             $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $results = $statement->fetchAll(PDO::FETCH_BOTH);
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
@@ -147,7 +146,7 @@ class ModelPersonne {
             $query = "select * from personne where id =" . $_SESSION["id"];
             $statement = $database->prepare($query);
             $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelProducteur");
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelPersonne");
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
@@ -265,8 +264,6 @@ class ModelPersonne {
             printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
             return -1;
         }
-        
-        
     }
 
 }

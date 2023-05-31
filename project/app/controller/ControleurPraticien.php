@@ -1,13 +1,12 @@
 <!-- début ControleurPraticien -->
 <?php
 
-require_once '../model/ModelPersonne.php';
-require_once '../model/ModelSpecialites.php';
-/*require_once '../model/ModelRendezvous.php';*/
-
+require_once '../model/ModelPersonne';
+require_once '../model/ModelSpecialite';
+/*require_once '../model/ModelRendezvous';*/
 class ControleurPraticien {
     
-    public static function PraticienReadSpecialites(){
+    public static function PraticienReadSpecialites(){//à quoi elle sert cette fonction ?
         $results = ModelPersonne::getPraticiensInfo();
         
         include 'config.php';
@@ -20,15 +19,15 @@ class ControleurPraticien {
     
     public static function PraticienReadDisponibilite(){
         include 'config.php';
-        $results = ModelPersonne::getPraticienDisponibilite();
+        $results = ModelPersonne::getPraticienDisponibilite();//mettre en paramètre l'id du praticien ($_SESSION['id']) ?
         $vue = $root . '/app/view/praticien/viewDisponibilite.php';
         if (DEBUG){
-            echo("ControleurPraticien : PraticienReadDisponibilite : vue = $vue");
+            echo("ControleurPraticien : viewDisponibilite : vue = $vue");
         }
         require ($vue);
     }
     
-    public static function PraticienCreate(){
+    public static function PraticienCreate(){// pas plutot 'ajoutDisponibilités' ?
         include 'config.php';
         $vue = $root. '/app/view/praticien/viewInsert.php';
         if (DEBUG){
@@ -37,8 +36,28 @@ class ControleurPraticien {
         require($vue);
     }
     
-    public static function PraticienCreated(){
-        /*faut faire la fonction pour ajouter des rdv*/
+    public static function integrationNouvellesDisponibilites(){
+        //fct qui crée les nouvelles dispos
+    }
+    
+    public static function listeRDVPraticien(){
+        $results = ModelRDV::getRDVPraticien($_SESSION['id']);
+        include 'config.php';
+        $vue = $root . '/app/view/administrateur/viewAllRdv.php';
+        if (DEBUG){
+            echo("ControleurAdministrateur : listeRDVPraticien : vue = $vue");
+        }
+        require ($vue);
+    }
+    
+    public static function listePatients(){
+        $results = ModelRDV::getPatients($_SESSION['id']);
+        include 'config.php';
+        $vue = $root . '/app/view/administrateur/viewAllPatients.php';
+        if (DEBUG){
+            echo("ControleurAdministrateur : listeRDVPraticien : vue = $vue");
+        }
+        require ($vue);
     }
     
     
