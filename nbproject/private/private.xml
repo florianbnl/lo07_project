@@ -5,11 +5,11 @@
         <group>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/Model.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPraticien.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewInsert.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllRdv.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/seconnecter/viewLogin.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewInfo.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelSpecialites.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelRDV.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibFooter.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewId.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibMenu.php</file>
@@ -17,7 +17,6 @@
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelPersonne.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurSpecialites.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibJumbotron.html</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/router/router2.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibHeader.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewPraticien.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/outil/doctolib_base.sql</file>
@@ -33,7 +32,6 @@
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAccueil.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/patient/viewMonCompte.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewAllSpecialite.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewDisponibilite.php</file>
         </group>
     </open-files>
 </project-private>

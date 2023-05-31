@@ -3,29 +3,28 @@
 
 <nav class="navbar navbar-expand-lg bg-success fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="router1.php?action=DoctolibAccueil">Bonelli-GUINET|</a>
+    <a class="navbar-brand" href="router1.php?action=doctolibAccueil">Bonelli-GUINET|</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand">|</a>
     <?php
     if (!($_SESSION["login"]=="vide")){
-        switch ($_SESSION["statut"]){
+        switch ($_SESSION["login"]->getStatut()){
         case 0:
-            echo("<a class='navbar-brand' href='router1.php?action=DoctolibAccueil'>administrateur</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>administrateur</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
             break;
         case 1:
-            echo("<a class='navbar-brand' href='router1.php?action=DoctolibAccueil'>praticien</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>praticien</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
             break;
         case 2:
-            echo("<a class='navbar-brand' href='router1.php?action=DoctolibAccueil'>patien</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>patient</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
@@ -37,20 +36,20 @@
     }
     echo("<a class='navbar-brand'>|</a>");
     
-    if (!($_SESSION["login"]=="vide")){
-        echo("<a classe='navbar-brand' href='router1.php?action=DoctolibAccueil'>" . $_SESSION["prenom"] . " " . $_SESSION["nom"] ."</a>");
-        echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
-                    . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
-            echo("<span class='navbar-toggler-icon'></span></button>");
+    if ($_SESSION["login"] != "vide") {
+        echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>" . $_SESSION["login"]->getNom() . " " . $_SESSION["login"]->getPrenom() . "</a>");
+        echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
+        echo("<span class='navbar-toggler-icon'></span></button>");
     }
     echo("<a class='navbar-brand'>|</a>");
+
     ?>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <?php 
-          if (!($_SESSION["login"]=="vide")){
+          if ($_SESSION["login"]!="vide"){
                 echo("<li class='nav-item dropdown>");
-                switch ($_SESSION["statut"]){
+                switch ($_SESSION["login"]->getStatut()){
                     case 0:
                         echo("<a class='nav-link-dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>administrateur</a>");
                         echo("<ul class='dropdown-menu'>");
@@ -58,7 +57,7 @@
                         echo("<li><a class='dropdown-item' href='router1?action=selectionDUneSpecialite'>Sélection d'une spécialité par son id</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialiteCreate'>Insertion d'une spécialité</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=praticienReadSpecialites'>Liste des praticiens avec leur spécialité</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=nombrePraticiensParPatient'>Nombre de praticiens par patient</a></li>hr>");
+                        echo("<li><a class='dropdown-item' href='router1?action=nombrePraticiensParPatient'>Nombre de praticiens par patient</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=administrateurInfo'>Info</a></li>");
                         break;
                     case 1:

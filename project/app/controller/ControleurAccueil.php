@@ -39,7 +39,7 @@ class ControleurAccueil {
     public static function accueilInscrire(){
         $verif = ModelPersonne::getVerifyLogin(htmlspecialchars($_GET['login']));
         include 'config.php';
-        if ($verif == 1){
+        if ($verif == 0){
             $results = ModelPersonne::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['adresse']), htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']), htmlspecialchars($_GET['statut']), htmlspecialchars($_GET['specialite'])); 
             $vue = $root . '/app/view/viewDoctolibAccueil.php';
         }
@@ -59,7 +59,8 @@ class ControleurAccueil {
     }
     
     public static function accueilLogined(){
-        $verif = ModelPersonne::getPasswordLogin($_GET['login'], $_GET['password']);
+        $verif = ModelPersonne::getPasswordLogin(htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']));
+        include 'config.php';
         if ( $verif == 1){
             $vue = $root . '/app/view/viewDoctolibAccueil.php';
         }

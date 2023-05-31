@@ -5,8 +5,18 @@ require_once 'Model.php';
 const ADMINISTRATEUR = 0;
 const PRATICIEN = 1;
 const PATIENT = 2;
+
 class ModelPersonne {
-    private $id, $nom, $prenom, $adresse, $login, $password, $statut, $specialite;
+
+    
+    private $id;
+    private $nom;
+    private $prenom;
+    private $adresse;
+    private $login;
+    private $password;
+    private $statut;
+    private $specialite;
     
     public function __construct($id=null, $nom=null, $prenom=null, $adresse=null, $login=null, $password=null, $statut=null, $specialite=null) {
         $this->id = $id;
@@ -46,8 +56,8 @@ class ModelPersonne {
     public function getStatut() {
         return $this->statut;
     }
-    
-    public function getSpecialite(){
+
+    public function getSpecialite() {
         return $this->specialite;
     }
 
@@ -76,20 +86,7 @@ class ModelPersonne {
     }
 
     public function setStatut($statut){
-        switch ($statut) {
-            case self::ADMINISTRATEUR:
-                $this->statut = 0;
-                break;
-            case self::PRATICIEN:
-                $this->statut = 1;
-                break;
-            case self::PATIENT:
-                $this->statut = 2;
-                break;
-
-            default:
-                break;
-        }
+        $this->statut = $statut;
     }
     
     public function setSpecialite($specialite) {
@@ -171,41 +168,50 @@ class ModelPersonne {
     public static function getPasswordLogin($login, $password){
         try{
             $database = Model::getInstance();
-            $query = "select count(id) where login = :login and password = :password";
+            $query = "SELECT * FROM personne WHERE login = :login AND password = :password";
             $statement = $database->prepare($query);
-            $statement->exectute([
-                'login' => $login,
-                'password' => $password,
+            $statement->execute([
+                ':login' => $login,
+                ':password' => $password,
             ]);
-            $tuple = $statement->fetch();
-            if ($tuple['0']==0){
-                $verif=0;
-            }else{
-                $verif = 1;
-                $query = "select * from personne where login = $login";
-                $statement = $database->prepare($query);
-                $statement->exectute();
-                $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
+            $tuple = $statement->fetch(PDO::FETCH_ASSOC);
+
+            if ($tuple) {
+                $results = new ModelPersonne();
+                $results->setId($tuple['id']);
+                $results->setNom($tuple['nom']);
+                $results->setPrenom($tuple['prenom']);
+                $results->setAdresse($tuple['adresse']);
+                $results->setLogin($tuple['login']);
+                $results->setPassword($tuple['password']);
+                $results->setSpecialite($tuple['specialite_id']);
+                $results->setStatut($tuple['statut']);
                 $_SESSION['login'] = $results;
+                $verif = 1;
+            } else {
+                $verif = 0;
             }
+
             return $verif;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;
         }
-        
     }
+
+
     
     public static function getVerifyLogin($login){
         try{
             $database = Model::getInstance();
-            $query = "select count(id) where login = :login";
+            $query = "select count(id) from personne where login = :login";
             $statement = $database->prepare($query);
-            $statement->exectute([
-                'login' => $login,
+            $statement->execute([
+                ':login' => $login,
             ]);
             $tuple = $statement->fetch();
-            if ($tuple['0']==0){
+            print_r($tuple);
+            if ($tuple[0]==0){
                 $results=0;
             }else{
                 $results = 1;
@@ -230,22 +236,27 @@ class ModelPersonne {
             $query = "insert into personne value (:id, :nom, :prenom, :adresse, :login, :password, :statut, :specialite)";
             $statement = $database->prepare($query);
             $statement->execute([
-                'id' => $id,
-                'nom' => $nom,
-                'prenon' => $prenom,
-                'adresse' => $adresse,
-                'login' => $login,
-                'password' => $password,
-                'statut' => $statut,
-                'specialite' => $specialite
+                ':id' => $id,
+                ':nom' => $nom,
+                ':prenom' => $prenom,
+                ':adresse' => $adresse,
+                ':login' => $login,
+                ':password' => $password,
+                ':statut' => $statut,
+                ':specialite' => $specialite
             ]);
-            
-            $query = "select * from personne where id = $id";
-            $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_CLASS, 'ModelPersonne');
-            $_SESSION['login']=$results;
-            return $id;
+            $results = new ModelPersonne();
+            $results->setId($id);
+            $results->setNom($nom);
+            $results->setPrenom($prenom);
+            $results->setAdresse($adresse);
+            $results->setLogin($login);
+            $results->setPassword($password);
+            $results->setSpecialite($specialite);
+            $results->setStatut($statut);
+            print_r($results);
+            $_SESSION['login'] = $results;
+            return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
             return -1;

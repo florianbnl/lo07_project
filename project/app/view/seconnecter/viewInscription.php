@@ -15,10 +15,10 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <h4 class="text-danger">Formulaire d'inscription</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='AccueilInscrire'>
-        <label class='w-25' for="nom">nom : </label><input type="text" name='nom' value='<?php echo($_GET["nom"]) ?>'> <br/> 
-        <label class='w-25' for="prenom">prenom : </label><input type="text" name='prenom' value='<?php echo($_GET["prenom"]) ?>'> <br/>
-        <label class='w-25' for="adresse">adresse : </label><input type="text" name='adresse' value='<?php echo($_GET["adresse"]) ?>'> <br/>
+        <input type="hidden" name='action' value='accueilInscrire'>
+        <label class='w-25' for="nom">nom : </label><input type="text" name='nom' value=''> <br/> 
+        <label class='w-25' for="prenom">prenom : </label><input type="text" name='prenom' value=''> <br/>
+        <label class='w-25' for="adresse">adresse : </label><input type="text" name='adresse' value=''> <br/>
         <label class='w-25' for="login">Label : </label><input type="text" name='login' value=''> <br/>
         <label class='w-25' for="password">password : </label><input type="password" name='password' value=''> <br/> 
         <label for="statut">Votre statut : </label> <select class="form-control" id='statut' name='statut' style="width: 100px">
@@ -27,12 +27,10 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
             <option value="ModelPersonne::PATIENT">patient</option>
         </select> <br>
         
-        <label for="specialite">Votre spécialité si vous êtes praticien : </label> <select class="form-control" id='statut' name='statut' style="width: 100px">
+        <label for="specialite">Votre spécialité si vous êtes praticien : </label> <select class="form-control" id='specialite' name='statut' style="width: 200px">
             <?php
-            $compteur=0;
             foreach($results as $value){
-                echo("<option value='$compteur'>$value</option>");
-                $compteur +=1;
+                echo("<option value='" . $value->id . "'>". $value->id . ":" . $value->label . "</option>");
             }
             ?>
         </select>
