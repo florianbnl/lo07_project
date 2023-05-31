@@ -84,7 +84,7 @@ class ModelPersonne {
                 $this->statut = 1;
                 break;
             case self::PATIENT:
-                $this->statut=2;
+                $this->statut = 2;
                 break;
 
             default:
@@ -252,18 +252,4 @@ class ModelPersonne {
         }
     }
     
-    public static function getPraticienDisponibilite(){
-        try{
-            $database = Model::getInstance();
-            $query = 'select rdv_date from rendrezvous where patient_id = 0';
-            $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO:: FETCH_COLUMN, 0);
-            return $results;
-        } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
-            return -1;
-        }
-    }
-
 }

@@ -35,16 +35,10 @@ switch ($action) {
      break;
  
  case "patientReadInfo":
- case "listeRDVPatient":
- case "priseDeRDV":
      ControleurPatient::$action();
      break;
  
  case "praticienReadSpecialites":
- case "praticienReadDisponibilite":
- case "praticienCreate":
- case "integrationNouvellesDisponibilites":
- case "listeRDVPraticien":
  case "listePatients":
      ControleurPraticien::$action();
      break;
@@ -55,6 +49,15 @@ switch ($action) {
  case "specialitesCreated":
  case "selectionDUneSpecialite":
      ControleurSpecialites::$action();
+     break;
+ 
+ case "praticienReadDisponibilite":
+ case "ajoutDisponibilites":
+ case "integrationNouvellesDisponibilites":
+ case "listeRDVPraticien":
+ case "listeRDVPatient":
+ case "priseDeRDV":
+     ControleurRDV::$action();
      break;
 
  // Tache par défaut
