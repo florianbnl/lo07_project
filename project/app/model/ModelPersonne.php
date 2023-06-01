@@ -227,13 +227,13 @@ class ModelPersonne {
         try{
             $database = Model::getInstance();
         
-            $query = "select max(id) from personne";
+            $query = "select max(personne.id) from personne";
             $statement = $database->query($query);
             $tuple = $statement->fetch();
-            $id = $tuple['0'];
+            $id = $tuple[0];
             $id++;
 
-            $query = "insert into personne value (:id, :nom, :prenom, :adresse, :login, :password, :statut, :specialite)";
+            $query = "insert into personne value (:id, :nom, :prenom, :adresse, :login, :password, :statut, :specialite_id)";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':id' => $id,
@@ -243,7 +243,7 @@ class ModelPersonne {
                 ':login' => $login,
                 ':password' => $password,
                 ':statut' => $statut,
-                ':specialite' => $specialite
+                ':specialite_id' => $specialite
             ]);
             $results = new ModelPersonne();
             $results->setId($id);
@@ -254,11 +254,10 @@ class ModelPersonne {
             $results->setPassword($password);
             $results->setSpecialite($specialite);
             $results->setStatut($statut);
-            print_r($results);
             $_SESSION['login'] = $results;
             return $results;
         } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return -1;
         }
     }

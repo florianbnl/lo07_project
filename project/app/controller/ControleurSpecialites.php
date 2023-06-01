@@ -2,26 +2,26 @@
 <?php
 
 require_once '../model/ModelPersonne.php';
-require_once '../model/ModelSpecialites.php';
+require_once '../model/ModelSpecialite.php';
 /*require_once '../model/ModelRendezvous.php';*/
 
 class ControleurSpecialites {
     public static function specialitesReadAll() {
-        $results = ModelSpecialites::getAll();
+        $results = ModelSpecialite::getAll();
         include 'config.php';
-        $vue = $root . '/app/view/admistrateur/viewAllSpecialite';
+        $vue = $root . '/app/view/administrateur/viewAllSpecialite.php';
         if (DEBUG){
             echo("ControleurSpecialites : specialitesReadAll : vue = $vue");
         }
-        require ($vue);
+        require($vue);
     }
     
     public static function specialitesReadOne(){
         $specialite_id = $_GET['id'];
-        $results = ModelSpecialites::getOne($specialite_id);
+        $results = ModelSpecialite::getOne($specialite_id);
         
         include 'config.php';
-        $vue = $root . 'app/view/administrateur/viewAllSpecialite';
+        $vue = $root . 'app/view/administrateur/viewAllSpecialite.php';
         if (DEBUG){
             echo("ControleurSpecialites : SpecialitesReadOne : vue = $vue");
         }
@@ -29,7 +29,7 @@ class ControleurSpecialites {
     }
     
     public static function selectionDUneSpecialite(){
-        $results = ModelSpecialites::getAllId();
+        $results = ModelSpecialite::getAllId();
 
         // ----- Construction chemin de la vue
         include 'config.php';
@@ -47,7 +47,7 @@ class ControleurSpecialites {
     }
     
     public static function specialitesCreated(){
-        $results = ModelSpecialites::insert(htmlspecialchars($_GET['label'])); //'nom' avant que je change
+        $results = ModelSpecialite::insert(htmlspecialchars($_GET['label'])); //'nom' avant que je change
         
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewInserted.php';

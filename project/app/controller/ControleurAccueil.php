@@ -2,7 +2,7 @@
 <?php
 
 require_once '../model/ModelPersonne.php';
-require_once '../model/ModelSpecialites.php';
+require_once '../model/ModelSpecialite.php';
 /*require_once '../model/ModelRendezvous.php';*/
 
 class ControleurAccueil {
@@ -27,7 +27,7 @@ class ControleurAccueil {
     }
     
     public static function accueilInscription(){
-        $results = ModelSpecialites::getAll();
+        $results = ModelSpecialite::getAll();
         include 'config.php';
         $vue = $root . '/app/view/seconnecter/viewInscription.php';
         if (DEBUG){

@@ -30,7 +30,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
         <label for="specialite">Votre spécialité si vous êtes praticien : </label> <select class="form-control" id='specialite' name='statut' style="width: 200px">
             <?php
             foreach($results as $value){
-                echo("<option value='" . $value->id . "'>". $value->id . ":" . $value->label . "</option>");
+                echo("<option value='" . $value["id"] . "'>". $value["id"] . ":" . $value["label"]. "</option>");
             }
             ?>
         </select>

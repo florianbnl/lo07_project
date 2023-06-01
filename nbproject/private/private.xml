@@ -27,10 +27,12 @@
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/viewDoctolibAccueil.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllPatients.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPatient.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/router/router1.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/patient/viewAllRdv.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/index.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAccueil.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/patient/viewMonCompte.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/config.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewAllSpecialite.php</file>
         </group>
     </open-files>
