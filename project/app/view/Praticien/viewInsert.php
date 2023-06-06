@@ -11,11 +11,12 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       include $root . '/app/view/fragment/fragmentDoctolibMenu.html';
       include $root . '/app/view/fragment/fragmentDoctolibJumbotron.html';
     ?> 
-    <h4 class="text-danger">Création d'une nouvelle spécialité</h4>
+    <h4 class="text-danger">Ajout de nouvelles disponibilités</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='specialiteCreated'>        
-        <label class='w-25' for="label">Label : </label><input type="text" name='label' value=''> <br/>                                 
+        <input type="hidden" name='action' value='disponibilitesAjoutees'>        
+        <label class='w-25' for="label">rdv_date : </label><input type="date" name='rdv_date' value=''> <br/>
+        <label class='w-25' for="label">rdv_nombre : </label><input type="number" name='rdv_nombre' value=''> <br/>
       </div>
       <p/>
        <br/> 

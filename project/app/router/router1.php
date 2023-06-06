@@ -57,6 +57,8 @@ switch ($action) {
  case "listeRDVPraticien":
  case "listeRDVPatient":
  case "priseDeRDV":
+ case "disponibilitesAjoutees":
+ case "disponibilitesPraticien":
      ControleurRDV::$action();
      break;
 

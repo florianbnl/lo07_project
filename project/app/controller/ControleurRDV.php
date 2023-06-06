@@ -10,7 +10,7 @@ class ControleurRDV {
     public static function praticienReadDisponibilite(){
         include 'config.php';
         $results = ModelRDV::getPraticienDisponibilite();//mettre en paramètre l'id du praticien ($_SESSION['id']) ?
-        $vue = $root . '/app/view/praticien/viewDisponibilite.php';
+        $vue = $root . '/app/view/praticien/viewDisponibilites.php';
         if (DEBUG){
             echo("ControleurPraticien : viewDisponibilite : vue = $vue");
         }
@@ -35,7 +35,7 @@ class ControleurRDV {
     public static function listeRDVPraticien(){
         $results = ModelRDV::getRDVPraticien($_SESSION['id']);
         include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewAllRdv.php';
+        $vue = $root . '/app/view/praticien/viewAllRdv.php';
         if (DEBUG){
             echo("ControleurAdministrateur : listeRDVPraticien : vue = $vue");
         }
@@ -50,6 +50,10 @@ class ControleurRDV {
             echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
         }
         require ($vue);
+    }
+    
+    public static function disponibilitesAjoutees(){
+        ModelRDV::disponibilitesAjoutees();
     }
     
     public static function priseDeRDV(){

@@ -9,7 +9,7 @@ if (!defined('DEBUG')) {
 
 // ===============
 // Configuration de la base de données sur dev-isi
-$dsn = 'mysql:dbname=guinetcl;host=localhost;charset=utf8';
+$dsn = 'mysql:dbname=bonellif;host=localhost;charset=utf8';
 $username = 'bonellif';
 $password = 'baDAz3CU';
 

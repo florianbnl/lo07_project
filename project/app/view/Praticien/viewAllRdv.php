@@ -22,7 +22,6 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
           foreach ($results as $element) {
               echo("<tr><td>" . $element->getNon() . "</td>");
               echo("<td>" . $element->getPrenom() . "</td>");

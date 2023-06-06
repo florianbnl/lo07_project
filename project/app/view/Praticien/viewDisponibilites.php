@@ -11,10 +11,10 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       include $root . '/app/view/fragment/fragmentDoctolibMenu.html';
       include $root . '/app/view/fragment/fragmentDoctolibJumbotron.html';
     ?> 
-    <h4 class="text-danger">Création d'une nouvelle spécialité</h4>
+    <h4 class="text-danger">Disponibilités du praticien</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
-        <input type="hidden" name='action' value='specialiteCreated'>        
+        <input type="hidden" name='action' value='disponibilitesPraticien'>        
         <label class='w-25' for="label">Label : </label><input type="text" name='label' value=''> <br/>                                 
       </div>
       <p/>
