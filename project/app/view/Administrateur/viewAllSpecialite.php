@@ -8,7 +8,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 <body>
   <div class="container">
       <?php
-      include $root . '/app/view/fragment/fragmentDoctolibMenu.html';
+      include $root . '/app/view/fragment/fragmentDoctolibMenu.php';
       include $root . '/app/view/fragment/fragmentDoctolibJumbotron.html';
       ?>
 
@@ -24,8 +24,8 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
           <?php
           // La liste des vins est dans une variable $results             
           foreach ($results as $element) {
-              echo("<tr><td>" . $element->getId() . "</td>");
-              echo("<td>" . $element->getLabel() . "</td></tr>");
+              echo("<tr><td>" . $element['id'] . "</td>");
+              echo("<td>" . $element['label'] . "</td></tr>");
           }
           ?>
       </tbody>
