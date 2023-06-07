@@ -30,12 +30,7 @@ class ModelRDV {
             $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelRDV");
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
-        }
-        for ($i=0;$i<$rdv_nombre;$i++){
-            while (){//lire caractères de 13 à 18 et les transormer en un entier (avant --> lire la date et vérifier que c'est la même que $rdv_date ; faire une condition de sortie si h = 23 (au tour d'après, on quitte la boucle)
-                
-            }
-        }        
+        }       
     }
     
     public static function getRDVPraticien($id){
