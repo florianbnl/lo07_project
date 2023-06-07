@@ -128,7 +128,7 @@ class ModelPersonne {
     public static function getNombrePraticiensParPatient(){
         try{
             $database = Model::getInstance();
-            $query = "select count(id where statut = 1), count(id where statut = 2 from personne";//pas sûr de la formule --> group by ? - récupérer nom et prénom des patients puis le nb de praticiens
+            $query = "select P.nom, P.prenom, count(distinct R.praticien_id) as nombre_praticiens from personne as P join rendezvous as R on P.id = R.patient_id where P.id <> 0 group by P.id, P.nom, P.prenom";
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_BOTH);
@@ -160,6 +160,7 @@ class ModelPersonne {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $results["specialite_id"] = ControleurSpecialites::convertIdSpecialiteToString($statement['specialite_id']);
             return $results;
         } catch (Exception $ex) {
              printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());

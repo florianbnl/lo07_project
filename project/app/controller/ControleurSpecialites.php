@@ -28,15 +28,6 @@ class ControleurSpecialites {
         require ($vue);
     }
     
-    public static function selectionDUneSpecialite(){
-        $results = ModelSpecialite::getAllId();
-
-        // ----- Construction chemin de la vue
-        include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewId.php';
-        require ($vue);
-    }
-    
     public static function specialitesCreate(){
         require 'config.php';
         $vue = $root . '/app/view/administrateur/viewInsert.php';
@@ -55,6 +46,11 @@ class ControleurSpecialites {
             echo("ControleurSpecialites : SpecialitesCreated : vue = $vue");
         }
         require ($vue);
+    }
+    
+    public static function convertIdSpecialiteToString($id){
+        $specialite = ModelSpecialite::convertIdSpecialiteToString($id);
+        return $specialite;
     }
     
 }
