@@ -154,7 +154,7 @@ class ModelPersonne {
     public static function getPraticiensInfo(){
         try{
             $database = Model::getInstance();
-            $query = "select nom, prenom, specialite_id from personne where status = 1";
+            $query = "select * from personne where statut = 1";
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);

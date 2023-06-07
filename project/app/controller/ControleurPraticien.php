@@ -9,9 +9,8 @@ class ControleurPraticien {
     
     public static function praticienReadSpecialites(){//à quoi sert cette fonction ?
         $results = ModelPersonne::getPraticiensInfo();
-        
         include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewPraticien';
+        $vue = $root . '/app/view/administrateur/viewPraticien.php';
         if (DEBUG){
             echo("ControleurPraticien : PraticienreadSpecialites : vue = $vue");
         }
