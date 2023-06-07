@@ -31,7 +31,7 @@ class ControleurAccueil {
         include 'config.php';
         $vue = $root . '/app/view/seconnecter/viewInscription.php';
         if (DEBUG){
-             echo("ControllerAccueil : AccueilInscription : vue = $vue");
+             echo("ControleurAccueil : AccueilInscription : vue = $vue");
         }
         require ($vue);
     }
