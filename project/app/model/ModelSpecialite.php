@@ -81,7 +81,8 @@ class ModelSpecialite {
              $database = Model::getInstance();
 
              $query = "select max(specialite.id) from specialite";
-             $statement = $database->query($query);
+             $statement = $database->prepare($query);
+             $statement->execute();
              $tuple = $statement->fetch();
              $id = $tuple[0];
              $id++;  
