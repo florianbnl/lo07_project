@@ -2,12 +2,12 @@
 
 require_once 'Model.php';
 
-const ADMINISTRATEUR = 0;
-const PRATICIEN = 1;
-const PATIENT = 2;
+
 
 class ModelPersonne {
-
+    const ADMINISTRATEUR = 0;
+    const PRATICIEN = 1;
+    const PATIENT = 2;
     
     private $id;
     private $nom;
@@ -96,9 +96,11 @@ class ModelPersonne {
     public static function getAll($param){
         try{
            $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = $param";
+            $query = "select id, nom, prenom, adresse from personne where statut = :param";
             $statement = $database->prepare($query);
-            $statement->execute();
+            $statement->execute([
+                ':param' => $param
+            ]);
             $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
             return $results;
         } catch (Exception $ex) {
@@ -203,6 +205,7 @@ class ModelPersonne {
     
     public static function getVerifyLogin($login){
         try{
+            print_r($login);
             $database = Model::getInstance();
             $query = "select count(id) from personne where login = :login";
             $statement = $database->prepare($query);
@@ -223,17 +226,18 @@ class ModelPersonne {
         }
     }
     
-    public static function insert($nom, $prenom, $adresse, $login, $password, $statut, $specialite){
+    public static function insert($nom, $prenom, $adresse, $login, $password, $statut, $specialite_id){
         try{
             $database = Model::getInstance();
         
             $query = "select max(personne.id) from personne";
-            $statement = $database->query($query);
+            $statement = $database->prepare($query);
+            $statement->execute();
             $tuple = $statement->fetch();
             $id = $tuple[0];
             $id++;
 
-            $query = "insert into personne value (:id, :nom, :prenom, :adresse, :login, :password, :statut, :specialite_id)";
+            $query = "insert into personne values (:id, :nom, :prenom, :adresse, :login, :password, :statut, :specialite_id)";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':id' => $id,
@@ -243,7 +247,7 @@ class ModelPersonne {
                 ':login' => $login,
                 ':password' => $password,
                 ':statut' => $statut,
-                ':specialite_id' => $specialite
+                ':specialite_id' => $specialite_id
             ]);
             $results = new ModelPersonne();
             $results->setId($id);
@@ -252,7 +256,7 @@ class ModelPersonne {
             $results->setAdresse($adresse);
             $results->setLogin($login);
             $results->setPassword($password);
-            $results->setSpecialite($specialite);
+            $results->setSpecialite($specialite_id);
             $results->setStatut($statut);
             $_SESSION['login'] = $results;
             return $results;

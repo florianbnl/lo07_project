@@ -3,7 +3,7 @@
 
 require_once '../model/ModelPersonne.php';
 require_once '../model/ModelSpecialite.php';
-/*require_once '../model/ModelRendezvous.php';*/
+require_once '../model/ModelRDV.php';
 
 class ControleurAccueil {
     
@@ -40,10 +40,11 @@ class ControleurAccueil {
         $verif = ModelPersonne::getVerifyLogin(htmlspecialchars($_GET['login']));
         include 'config.php';
         if ($verif == 0){
-            $results = ModelPersonne::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['adresse']), htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']), htmlspecialchars($_GET['statut']), htmlspecialchars($_GET['specialite'])); 
+            $results = ModelPersonne::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['adresse']), htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']), htmlspecialchars($_GET['statut']), htmlspecialchars($_GET['specialite_id'])); 
             $vue = $root . '/app/view/viewDoctolibAccueil.php';
         }
         else{
+            $results = ModelSpecialite::getAll();
             $vue = $root . '/app/view/seconnecter/viewInscription.php'; 
         }
         require($vue);

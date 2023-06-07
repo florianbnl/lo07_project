@@ -22,12 +22,12 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
         <label class='w-25' for="login">Label : </label><input type="text" name='login' value=''> <br/>
         <label class='w-25' for="password">password : </label><input type="password" name='password' value=''> <br/> 
         <label for="statut">Votre statut : </label> <select class="form-control" id='statut' name='statut' style="width: 100px">
-            <option value="ModelPersonne::ADMINISTRATEUR">administrateur</option>
-            <option value="ModelPersonne::PRATICIEN">praticien</option>
-            <option value="ModelPersonne::PATIENT">patient</option>
+            <option value=0>administrateur</option>
+            <option value=1>praticien</option>
+            <option value=2>patient</option>
         </select> <br>
         
-        <label for="specialite">Votre spécialité si vous êtes praticien : </label> <select class="form-control" id='specialite' name='statut' style="width: 200px">
+        <label for="specialite">Votre spécialité si vous êtes praticien : </label> <select class="form-control" id='specialite' name='specialite_id' style="width: 200px">
             <?php
             foreach($results as $value){
                 echo("<option value='" . $value["id"] . "'>". $value["id"] . ":" . $value["label"]. "</option>");
