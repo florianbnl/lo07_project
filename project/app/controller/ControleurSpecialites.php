@@ -9,7 +9,7 @@ class ControleurSpecialites {
     public static function specialitesReadAll() {
         $results = ModelSpecialite::getAll();
         include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewAllSpecialite.php';
+        $vue = $root . '/app/view/Administrateur/viewAllSpecialite.php';
         if (DEBUG){
             echo("ControleurSpecialites : specialitesReadAll : vue = $vue");
         }
