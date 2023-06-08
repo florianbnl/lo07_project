@@ -96,12 +96,24 @@ class ModelPersonne {
     public static function getAll($param){
         try{
            $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = :param";
+            $query = "select id, nom, prenom, adresse, specialite_id from personne where statut = :param and nom <> '?'";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':param' => $param
             ]);
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            switch($param){
+                case 1:
+                    $praticiensInfo = [];
+                    foreach ($results as $element){
+                        $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
+                        $praticiensInfo[] = $element;
+                    }
+                    return $praticiensInfo;
+                    break;
+                default:
+                    return $results;
+            }                
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
