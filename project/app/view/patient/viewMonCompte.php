@@ -29,14 +29,14 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
           <?php
           // La liste des vins est dans une variable $results             
           foreach ($results as $element) {
-              echo("<tr><td>" . $element->getId() . "</td>");
-              echo("<td>" . $element->getNom() . "</td>");
-              echo("<td>" . $element->getPrenom() . "</td>");
-              echo("<td>" . $element->getAdresse() . "</td>");
-              echo("<td>" . $element->getLogin() . "</td>");
-              echo("<td>" . $element->getPassword() . "</td>");
-              echo("<td>" . $element->getStatut() . "</td>");
-              echo("<td>" . $element->getSpecialite() . "</td></tr>");
+              echo("<tr><td>" . $element['id'] . "</td>");
+              echo("<td>" . $element['nom'] . "</td>");
+              echo("<td>" . $element['prenom'] . "</td>");
+              echo("<td>" . $element['adresse'] . "</td>");
+              echo("<td>" . $element['login'] . "</td>");
+              echo("<td>" . $element['password'] . "</td>");
+              echo("<td>" . $element['statut'] . "</td>");
+              echo("<td>" . $element['specialite_id'] . "</td></tr>");
           }
           ?>
       </tbody>

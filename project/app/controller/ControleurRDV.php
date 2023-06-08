@@ -43,7 +43,7 @@ class ControleurRDV {
     }
     
     public static function listeRDVPatient(){
-        $results = ModelRDV::getRDVPatient($_SESSION['id']);
+        $results = ModelRDV::getRDVOne(htmlspecialchars($_SESSION['login']->getId()));
         include 'config.php';
         $vue = $root . '/app/view/patient/viewAllRdv.php';
         if (DEBUG){
@@ -57,9 +57,36 @@ class ControleurRDV {
     }
     
     public static function priseDeRDV(){
-        //méthode pour prendre un rdv avec un médecin (2 formulaires successifs)
+        $results = ModelPersonne::getAll(ModelPersonne::PRATICIEN);
+        include 'config.php';
+        $vue = $root . '/app/view/patient/viewPraticien.php';
+        if (DEBUG){
+            echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
+        }
+        require ($vue);
     }
     
+    public static function disponibilitesPraticien(){
+        $results = ModelRDV::getPraticienDisponibilite($_GET['id']);
+        print_r($results);
+        include 'config.php';
+        $vue = $root . '/app/view/patient/viewRDVPraticien.php';
+        if (DEBUG){
+            echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
+        }
+        require ($vue);
+    }
+    
+    public static function RDVAjoutPatient(){
+        print_r($_GET);
+        $results = ModelRDV::modify(htmlspecialchars($_GET['praticien_id']), htmlspecialchars($_GET['rdv_date']));
+        include 'config.php';
+        $vue = $root . '/app/view/viewDoctolibAccueil.php';
+        if (DEBUG){
+             echo("ControllerRDV : RDVajoutPatient : vue = $vue");
+        }
+        require ($vue);
+    }
 }
 ?>
 <!-- fin ControleurRDV-->

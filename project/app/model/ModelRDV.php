@@ -64,15 +64,15 @@ class ModelRDV {
     public static function getPraticienDisponibilite($id){
         try{
             $database = Model::getInstance();
-            $query = "select rdv_date from rendezvous where patient_id = 0 and praticien_id = :id";
+            $query = "select * from rendezvous where patient_id = 0 and praticien_id = :id";
             $statement = $database->prepare($query);
             $statement->execute([
-              'id' => $id
+              ':id' => $id
             ]);
-            $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (Exception $ex) {
-            printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return -1;
         }
     }
@@ -108,12 +108,37 @@ class ModelRDV {
         }
     }
     
-    public static function getRDVPraticien($id){
-        //affiche la liste des rendez-vous du praticien avec id = $id --> where id_patient > 0
+    public static function getRDVOne($id){
+        try{
+            $database = Model::getInstance();
+            $query = "select patient.nom as nom_patient, patient.prenom as prenom_patient, praticien.nom as nom_praticien, praticien.prenom as prenom_praticien, rdv_date from rendezvous, personne as patient cross join personne as praticien where rendezvous.patient_id = patient.id and rendezvous.praticien_id = praticien.id and (patient.id = :id or praticien.id = :id)";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                ':id' => $id
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;       
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
     }
     
-    public static function getRDVPatient($id){
-        //affiche la liste des rendez-vous du patient avec id = $id
+    public static function modify($praticien_id, $rdv_date){
+        try{
+            $database = Model::getInstance();
+            $query = "update rendezvous set patient_id = :patient_id where praticien_id = :praticien_id and rdv_date = :rdv_date";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                ':patient_id' => $_SESSION['login']->getId(),
+                ':praticien_id' => $praticien_id,
+                ':rdv_date' => $rdv_date
+            ]);
+            return 0;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return -1;
+        }
     }
     
 }

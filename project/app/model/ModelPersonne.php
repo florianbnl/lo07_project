@@ -27,7 +27,7 @@ class ModelPersonne {
         $this->password = $password;
         $this->statut = $statut;
         $this->specialite = $specialite;
-        $_SESSION['personne'] = $this;
+        $_SESSION['login'] = $this;
     }
     
     public function getId() {
@@ -98,7 +98,6 @@ class ModelPersonne {
         try{
            $database = Model::getInstance();
            $query  = "select personne.*, specialite.label as specialite from personne, specialite where statut = $param and specialite.id = personne.specialite_id";
-            //$query = "select * from personne where statut = :param union select specialite.label as specialite where specialite.id = personne.id";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':param' => $param
@@ -144,10 +143,12 @@ class ModelPersonne {
     public static function getPersonneInfo(){
         try{
             $database = Model::getInstance();
-            $query = "select * from personne where id =" . $_SESSION["id"];
+            $query = "select * from personne where id = :id";
             $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelPersonne");
+            $statement->execute([
+                ':id' => $_SESSION['login']->getId()
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());

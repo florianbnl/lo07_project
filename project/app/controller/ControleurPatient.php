@@ -9,7 +9,7 @@ class ControleurPatient {
     public static function patientReadInfo(){
         $results = ModelPersonne::getPersonneInfo();
         include 'config.php';
-        $vue = $root . '/app/view/Patient/viewMonCompte';
+        $vue = $root . '/app/view/patient/viewMonCompte.php';
         if (DEBUG){
             echo("ControleurPatient : PatientReadInfo : vue = $vue");
         }
