@@ -20,9 +20,9 @@ class ControleurPraticien {
     public static function listePatients(){
         $results = ModelRDV::getPatients($_SESSION['id']);
         include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewAllPatients.php';
+        $vue = $root . '/app/view/praticien/viewAllPatients.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listeRDVPraticien : vue = $vue");
+            echo("ControleurAdministrateur : listePatients : vue = $vue");
         }
         require ($vue);
     }

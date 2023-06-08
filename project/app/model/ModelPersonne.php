@@ -27,6 +27,7 @@ class ModelPersonne {
         $this->password = $password;
         $this->statut = $statut;
         $this->specialite = $specialite;
+        $_SESSION['personne'] = $this;
     }
     
     public function getId() {

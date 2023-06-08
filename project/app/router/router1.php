@@ -6,6 +6,7 @@ require ('../controller/ControleurAdministrateur.php');
 require ('../controller/ControleurPatient.php');
 require ('../controller/ControleurPraticien.php');
 require ('../controller/ControleurSpecialites.php');
+require ('../controller/ControleurRDV.php');
 // --- récupération de l'action passée dans l'URL
 $query_string = $_SERVER['QUERY_STRING'];
 
