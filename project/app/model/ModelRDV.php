@@ -61,13 +61,15 @@ class ModelRDV {
         }
     }
     
-    public static function getPraticienDisponibilite(){
+    public static function getPraticienDisponibilite($id){
         try{
             $database = Model::getInstance();
-            $query = 'select rdv_date from rendezvous where patient_id = 0';
+            $query = "select rdv_date from rendezvous where patient_id = 0 and praticien_id = :id";
             $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO:: FETCH_COLUMN, 0);
+            $statement->execute([
+              'id' => $id
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
@@ -84,9 +86,26 @@ class ModelRDV {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelRDV");
+            return $results; //il n'y avait pas avant
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $eX->getCode(), $eX->getMessage());
         }       
+    }
+    
+    public static function getPatients($id){
+        try{
+            $database = Model::getInstance();
+            $query = "select distinct patient.nom, patient.prenom, patient.adresse from rendezvous as r join personne as patient on r.patient_id = patient.id where r.praticien_id = :id and r.patient_id > 0";
+            $statement = $database->prepare($query);
+            $statement->execute([
+              'id' => $id
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (Exception $ex) {
+             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
     }
     
     public static function getRDVPraticien($id){
@@ -96,6 +115,7 @@ class ModelRDV {
     public static function getRDVPatient($id){
         //affiche la liste des rendez-vous du patient avec id = $id
     }
+    
 }
 
 ?>

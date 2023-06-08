@@ -16,7 +16,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='accueilLogined'>
-        <label class='w-25' for="login">login : </label><input type="text" name='login' value='boss1'> <br/>
+        <label class='w-25' for="login">login : </label><input type="text" name='login' value='florian'> <br/>
         <label class='w-25' for="password">password : </label><input type="password" name='password' value='secret'> <br/> 
       </div>
       <p/><br/>
