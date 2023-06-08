@@ -101,7 +101,19 @@ class ModelPersonne {
             $statement->execute([
                 ':param' => $param
             ]);
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC); 
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            switch($param){
+                case 1:
+                    $praticiensInfo = [];
+                    foreach ($results as $element){
+                        $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
+                        $praticiensInfo[] = $element;
+                    }
+                    return $praticiensInfo;
+                    break;
+                default:
+                    return $results;
+            }                
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
@@ -160,8 +172,12 @@ class ModelPersonne {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            #$results["specialite_id"] = ControleurSpecialites::convertIdSpecialiteToString(htmlspecialchars($results['specialite_id']));
-            return $results;
+            $praticiensInfo = [];
+            foreach ($results as $element){
+                $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
+                $praticiensInfo[] = $element;
+            }
+            return $praticiensInfo;
         } catch (Exception $ex) {
              printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;

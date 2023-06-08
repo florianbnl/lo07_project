@@ -11,7 +11,7 @@ class ControleurAdministrateur {
     public static function administrateurInfo(){
         $results_specialite = ModelSpecialite::getAll();
         $results_administrateur = ModelPersonne::getAll(ModelPersonne::ADMINISTRATEUR);
-        $results_praticien = ModelPersonne::getAll(ModelPersonne::PRATICIEN);
+        $results_praticien = ModelPersonne::getPraticiensInfo();//  getAll(ModelPersonne::PRATICIEN);
         $results_patient = ModelPersonne::getAll(ModelPersonne::PATIENT);
         $results_rendezvous = ModelRDV::getAll();
         include 'config.php';
