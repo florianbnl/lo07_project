@@ -112,7 +112,13 @@ class ModelSpecialite {
              $statement->execute([
                  ':id' => $id,
              ]);
-             strcmp($statement['label'], [string]);
+             if($statement->num_rows>0){
+                 $row = $statement->fetch_assoc();
+                 return $row["label"];
+             }
+             else{
+                 return "Spécialité introuvable";
+             }
              return $statement;
          } catch (Exception $ex) {
              printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());

@@ -38,7 +38,7 @@ class ControleurSpecialites {
     }
     
     public static function specialitesCreated(){
-        $results = ModelSpecialite::insert(htmlspecialchars($_GET['label'])); //'nom' avant que je change
+        $results = ModelSpecialite::insert(htmlspecialchars($_GET['label']));
         
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewInserted.php';
