@@ -96,7 +96,7 @@ class ModelPersonne {
     public static function getAll($param){
         try{
            $database = Model::getInstance();
-            $query = "select id, nom, prenom, adresse from personne where statut = :param";
+            $query = "select * from personne where statut = :param";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':param' => $param
@@ -160,7 +160,7 @@ class ModelPersonne {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $results["specialite_id"] = ControleurSpecialites::convertIdSpecialiteToString($statement['specialite_id']);
+            #$results["specialite_id"] = ControleurSpecialites::convertIdSpecialiteToString(htmlspecialchars($results['specialite_id']));
             return $results;
         } catch (Exception $ex) {
              printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
@@ -206,7 +206,6 @@ class ModelPersonne {
     
     public static function getVerifyLogin($login){
         try{
-            print_r($login);
             $database = Model::getInstance();
             $query = "select count(id) from personne where login = :login";
             $statement = $database->prepare($query);
@@ -214,7 +213,6 @@ class ModelPersonne {
                 ':login' => $login,
             ]);
             $tuple = $statement->fetch();
-            print_r($tuple);
             if ($tuple[0]==0){
                 $results=0;
             }else{

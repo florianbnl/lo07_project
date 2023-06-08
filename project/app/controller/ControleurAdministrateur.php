@@ -14,7 +14,6 @@ class ControleurAdministrateur {
         $results_praticien = ModelPersonne::getAll(ModelPersonne::PRATICIEN);
         $results_patient = ModelPersonne::getAll(ModelPersonne::PATIENT);
         $results_rendezvous = ModelRDV::getAll();
-        
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewInfo.php';
         if (DEBUG){

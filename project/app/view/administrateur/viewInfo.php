@@ -49,7 +49,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
               echo("<td>" . $element["nom"] . "</td>");
               echo("<td>" . $element["prenom"] . "</td>");
               echo("<td>" . $element["adresse"] . "</td>");
-              echo("<td>" . $element["specialite"] . "</td></tr>");
+              echo("<td>" . $element["specialite_id"] . "</td></tr>");
           }
           ?>
       </tbody>
@@ -68,9 +68,9 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
           <?php
           // La liste des vins est dans une variable $results             
           foreach ($results_patient as $element) {
-              echo("<tr><td>" . $element->getNon() . "</td>");
-              echo("<td>" . $element->getPrenom() . "</td>");
-              echo("<td>" . $element->getAdresse() . "</td></tr>");
+              echo("<tr><td>" . $element['nom'] . "</td>");
+              echo("<td>" . $element['prenom'] . "</td>");
+              echo("<td>" . $element['adresse'] . "</td></tr>");
           }
           ?>
       </tbody>
@@ -89,9 +89,9 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
           <?php
           // La liste des vins est dans une variable $results             
           foreach ($results_administrateur as $element) {
-              echo("<tr><td>" . $element->getNon() . "</td>");
-              echo("<td>" . $element->getPrenom() . "</td>");
-              echo("<td>" . $element->getAdresse() . "</td></tr>");
+              echo("<tr><td>" . $element['nom'] . "</td>");
+              echo("<td>" . $element['prenom'] . "</td>");
+              echo("<td>" . $element['adresse'] . "</td></tr>");
           }
           ?>
       </tbody>
