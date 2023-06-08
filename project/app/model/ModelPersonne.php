@@ -96,24 +96,13 @@ class ModelPersonne {
     public static function getAll($param){
         try{
            $database = Model::getInstance();
-            $query = "select * from personne where statut = :param";
+           $query  = "select personne.*, specialite.label as specialite from personne, specialite where statut = $param and specialite.id = personne.specialite_id";
+            //$query = "select * from personne where statut = :param union select specialite.label as specialite where specialite.id = personne.id";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':param' => $param
             ]);
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            switch($param){
-                case 1:
-                    $praticiensInfo = [];
-                    foreach ($results as $element){
-                        $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
-                        $praticiensInfo[] = $element;
-                    }
-                    return $praticiensInfo;
-                    break;
-                default:
-                    return $results;
-            }                
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);                
             return $results;
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
@@ -174,7 +163,7 @@ class ModelPersonne {
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             $praticiensInfo = [];
             foreach ($results as $element){
-                $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
+                $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString(htmlspecialchars($element['specialite_id']));
                 $praticiensInfo[] = $element;
             }
             return $praticiensInfo;

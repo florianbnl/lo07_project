@@ -5,7 +5,48 @@
 require_once 'Model.php';
 
 class ModelRDV {
+    private $id, $patient_id, $praticien_id, $rdv_date;
     
+    public function __construct($id=null, $patient_id=null, $praticien_id=null, $rdv_date=null) {
+        $this->id = $id;
+        $this->patient_id = $patient_id;
+        $this->praticien_id = $praticien_id;
+        $this->rdv_date = $rdv_date;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getPatient_id() {
+        return $this->patient_id;
+    }
+
+    public function getPraticien_id() {
+        return $this->praticien_id;
+    }
+
+    public function getRdv_date() {
+        return $this->rdv_date;
+    }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function setPatient_id($patient_id){
+        $this->patient_id = $patient_id;
+    }
+
+    public function setPraticien_id($praticien_id){
+        $this->praticien_id = $praticien_id;
+    }
+
+    public function setRdv_date($rdv_date){
+        $this->rdv_date = $rdv_date;
+    }
+
+        
     public static function getAll(){
         try{
            $database = Model::getInstance();
