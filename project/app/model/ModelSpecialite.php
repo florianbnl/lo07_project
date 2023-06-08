@@ -112,8 +112,9 @@ class ModelSpecialite {
              $statement->execute([
                  ':id' => $id,
              ]);
-             if($statement->num_rows>0){
-                 $row = $statement->fetch_assoc();
+             $rowCount = $statement->rowCount();
+             if($rowCount > 0){
+                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                  return $row["label"];
              }
              else{

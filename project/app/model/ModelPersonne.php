@@ -160,8 +160,12 @@ class ModelPersonne {
             $statement = $database->prepare($query);
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $results["specialite_id"] = ControleurSpecialites::convertIdSpecialiteToString($statement['specialite_id']);
-            return $results;
+            $praticiensInfo = [];
+            foreach ($results as $element){
+                $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString($element['specialite_id']);
+                $praticiensInfo[] = $element;
+            }
+            return $praticiensInfo;
         } catch (Exception $ex) {
              printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
             return NULL;
