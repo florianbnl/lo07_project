@@ -53,6 +53,16 @@ class ControleurSpecialites {
         return $specialite;
     }
     
+    public static function selectionDUneSpecialite(){
+        $results = ModelSpecialite::getAllId();
+        include 'config.php';
+        $vue = $root . '/app/view/administrateur/viewId.php';
+        if (DEBUG){
+            echo("ControleurSpecialites : selectionDUneSpecialite : vue = $vue");
+        }
+        require ($vue);
+    }
+    
 }
 ?>
 <!-- fin ControleurSpecialites -->
