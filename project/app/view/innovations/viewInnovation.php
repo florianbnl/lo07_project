@@ -20,6 +20,14 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
         center: [2.4, 46.4],
         zoom: 4
         });
+        <?php
+        foreach($results as $element){
+            echo("var marker = new mapboxgl.Marker()");
+            echo(".setLngLat([". $element["coordinates"][0] .",". $element["coordinates"][1]."])");
+            echo(".setPopup(new mapboxgl.Popup().setHTML('<h3>". $element['adresse'] . " =</h3><p>Nombre praticien =". $element['praticien']  ."</p>'))");
+            echo(".addTo(map);");
+        }
+        ?>
       </script>
 
 

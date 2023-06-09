@@ -272,4 +272,42 @@ class ModelPersonne {
         }
     }
     
+    public static function getAdresseNumber(){
+        try{
+            $database = Model::getInstance();
+            $query = "select adresse, count(id) as praticien from personne where statut = 1 group by adresse ";
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_BOTH);
+            $accessToken = 'pk.eyJ1IjoiZmxvZmxvc2giLCJhIjoiY2xpb2xvZTc0MDlxZzNmbGJmeHhhZDU0NCJ9.HRpcV6c-LpNUbBifaD5JCg';
+            $i = 0;
+            foreach ($results as $element) {
+                $address = $element['adresse'];
+
+                // Construire l'URL de requête pour chaque adresse
+                $url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" . urlencode($address) . ".json?access_token=" . $accessToken;
+
+                // Récupérer les données JSON de l'API
+                $response = file_get_contents($url);
+
+                if ($response === false) {
+                    die('Erreur lors de la récupération des données de l\'API.');
+                }
+
+                $data = json_decode($response, true);
+
+                // Vérifier si des correspondances ont été trouvées
+                if (!empty($data['features'])) {
+                    $coordinates = $data['features'][0]['center'];
+                }
+                $results[$i]["coordinates"] = $coordinates;
+                $i++;
+            }
+                return $results;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return NULL;
+        }
+    }
+    
 }

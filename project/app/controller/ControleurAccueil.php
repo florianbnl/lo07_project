@@ -75,6 +75,7 @@ class ControleurAccueil {
     }
     
     public static function accueilInnovation(){
+        $results = ModelPersonne::getAdresseNumber();
         include 'config.php';
         $vue = $root . 'app/view/innovations/viewInnovation.php';
         if (DEBUG){
