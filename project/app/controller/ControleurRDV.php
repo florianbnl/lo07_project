@@ -53,7 +53,13 @@ class ControleurRDV {
     }
     
     public static function disponibilitesAjoutees(){
-        ModelRDV::disponibilitesAjoutees();
+        $results = ModelRDV::disponibilitesAjoutees();
+        include 'config.php';
+        $vue = $root . '/app/view/praticien/viewInserted.php';
+        if (DEBUG){
+            echo("ControleurRDV : disponibilitesAjoutees : vue = $vue");
+        }
+        require ($vue);
     }
     
     public static function priseDeRDV(){

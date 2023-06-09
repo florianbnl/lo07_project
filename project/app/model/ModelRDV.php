@@ -84,17 +84,22 @@ class ModelRDV {
         
         // Définition de l'heure de départ
         $heure_debut = strtotime('10:00', strtotime($rdv_date));
-
-        for ($i = 0; $i < $rdv_nombre; $i++) {
+        try{
+            for ($i = 0; $i < $rdv_nombre; $i++) {
             // Calcule la date et l'heure du rendez-vous en ajoutant l'heure de départ et la durée en secondes
-            $rdv_timestamp = $heure_debut + ($i * 3600); // Ajoute une heure (3600 secondes) à chaque itération
+                $rdv_timestamp = $heure_debut + ($i * 3600); // Ajoute une heure (3600 secondes) à chaque itération
 
-            // Formate la date et l'heure du rendez-vous selon le format attendu ('Y-m-d H:i:s')
-            $rdv_date = date('Y-m-d H:i:s', $rdv_timestamp);
-            $formattedDate = date('Y-m-d à H\hi', strtotime($rdv_date));
-            echo($formattedDate);
+                // Formate la date et l'heure du rendez-vous selon le format attendu ('Y-m-d H:i:s')
+                $rdv_date = date('Y-m-d H:i:s', $rdv_timestamp);
+                $formattedDate = date('Y-m-d à H\hi', strtotime($rdv_date));
+                echo($formattedDate);
 
-            ModelRDV::insert($praticien_id, $formattedDate);
+                ModelRDV::insert($praticien_id, $formattedDate);
+            }
+            return 1;
+        } catch (Exception $ex) {
+            printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
+            return -1;
         }
     
     }
@@ -102,7 +107,6 @@ class ModelRDV {
     public static function insert($praticien_id, $rdv_date){
          try{
              $database = Model::getInstance();
-
              $query = "select max(rendezvous.id) from rendezvous";
              $statement = $database->prepare($query);
              $statement->execute();
