@@ -18,11 +18,11 @@ class ControleurPraticien {
     }
     
     public static function listePatients(){
-        $results = ModelRDV::getPatients($_SESSION['id']);
+        $results = ModelRDV::getPatients($_SESSION['login']->getId());
         include 'config.php';
         $vue = $root . '/app/view/praticien/viewAllPatients.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listePatients : vue = $vue");
+            echo("ControleurPraticien : listePatients : vue = $vue");
         }
         require ($vue);
     }
@@ -30,4 +30,3 @@ class ControleurPraticien {
     
 }
 ?>
-<!-- début ControleurPraticien -->

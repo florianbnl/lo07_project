@@ -9,7 +9,7 @@ class ControleurRDV {
     
     public static function praticienReadDisponibilite(){
         include 'config.php';
-        $results = ModelRDV::getPraticienDisponibilite($_SESSION['personne']->getId());//ça marche !
+        $results = ModelRDV::getPraticienDisponibilite($_SESSION['login']->getId());//ça marche !
         $vue = $root . '/app/view/praticien/viewDisponibilites.php';
         if (DEBUG){
             echo("ControleurPraticien : viewDisponibilite : vue = $vue");
@@ -33,7 +33,7 @@ class ControleurRDV {
     }
     
     public static function listeRDVPraticien(){
-        $results = ModelRDV::getRDVPraticien($_SESSION['personne']->getId());
+        $results = ModelRDV::getRDVPraticien($_SESSION['login']->getId());
         include 'config.php';
         $vue = $root . '/app/view/praticien/viewAllRdv.php';
         if (DEBUG){

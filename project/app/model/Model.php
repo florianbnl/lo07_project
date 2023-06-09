@@ -3,6 +3,9 @@
 <?php
 session_start();
 
+date_default_timezone_set('Europe/Paris');
+
+
 class Model extends PDO {
 
  private static $_instance;
@@ -14,6 +17,11 @@ class Model extends PDO {
  //Singleton
  public static function getInstance() {
   // les variables sont définies dans le fichier config.php
+     
+  $dsn = 'mysql:dbname=guinetcl;host=localhost;charset=utf8';
+  $username = 'guinetcl';
+  $password = 'D7rmbgul';   
+     
   include_once '../controller/config.php';
   
   if (DEBUG) echo ("Model : getInstance : dsn = $dsn</br>");
