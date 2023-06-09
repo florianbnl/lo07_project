@@ -74,6 +74,14 @@ class ControleurAccueil {
         require($vue);
     }
     
+    public static function accueilInnovation(){
+        include 'config.php';
+        $vue = $root . 'app/view/innovations/viewInnovation.php';
+        if (DEBUG){
+             echo("ControllerAccueil : AccueilLogin : vue = $vue");
+        }
+        require($vue);
+    }
 }
 ?>
 <!-- fin ControleurAcceuil-->

@@ -26,6 +26,7 @@ switch ($action) {
  case "accueilInscrire":
  case "accueilLogin":
  case "accueilLogined":
+ case "accueilInnovation":
      ControleurAccueil::$action();
      break;
 
