@@ -1,5 +1,3 @@
-
-<!-- ----- début viewId -->
 <?php 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -32,5 +30,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 
 
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewId -->

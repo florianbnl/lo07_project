@@ -1,9 +1,6 @@
-
-<!-- ----- début fragmentCaveMenu -->
-
 <nav class="navbar navbar-expand-lg bg-success fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="router1.php?action=doctolibAccueil">Bonelli-GUINET|</a>
+    <a class="navbar-brand" href="router1.php?action=doctolibAccueil">BONELLI-GUINET|</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,19 +9,19 @@
     if (!($_SESSION["login"]=="vide")){
         switch ($_SESSION["login"]->getStatut()){
         case 0:
-            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>administrateur</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>Administrateur</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
             break;
         case 1:
-            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>praticien</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>Praticien</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
             break;
         case 2:
-            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>patient</a>");
+            echo("<a class='navbar-brand' href='router1.php?action=doctolibAccueil'>Patient</a>");
             echo("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'"
                     . "aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>");
             echo("<span class='navbar-toggler-icon'></span></button>");
@@ -51,7 +48,7 @@
                 echo("<li class='nav-item dropdown'>");
                 switch ($_SESSION["login"]->getStatut()){
                     case 0:
-                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>administrateur</a>");
+                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Administrateur</a>");
                         echo("<ul class='dropdown-menu'>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialitesReadAll'>Liste des spécialités</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=selectionDUneSpecialite'>Sélection d'une spécialité par son id</a></li>");
@@ -61,17 +58,17 @@
                         echo("<li><a class='dropdown-item' href='router1?action=administrateurInfo'>Info</a></li>");
                         break;
                     case 1:
-                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>praticien</a>");
+                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Praticien</a>");
                         echo("<ul class='dropdown-menu'>");
                         echo("<li><a class='dropdown-item' href='router1?action=praticienReadDisponibilite'>Liste des disponibilités</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=ajoutDisponibilites'>Ajout de nouvelles disponibilités</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=listeRDVPraticien'>Liste des rendez-vous avec le nom des patients</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=listePatients'>Liste de mes patients (sansdoublon)</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=listePatients'>Liste de mes patients (sans doublon)</a></li>");
                         break;
                     case 2:
-                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>patient</a>");
+                        echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Patient</a>");
                         echo("<ul class='dropdown-menu'>");
-                        echo("<li><a class='dropdown-item' href='router1?action=patientReadInfo'>MonCompte</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=patientReadInfo'>Mon Compte</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=listeRDVPatient'>Liste de mes rendez-vous</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=priseDeRDV'>Prendre un RDV avec un praticien</a></li>");
                         break;
@@ -86,8 +83,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Innovations</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="router1.php?action=accueilInnovation">Proposez une fonctionnalité originale</a></li>
-            <li><a class="dropdown-item" href="router1.php?action=ameliorationMVC">Proposez une amélioration du code MVC</a></li>
+            <li><a class="dropdown-item" href="router1.php?action=accueilInnovation">Proposition d'une fonctionnalité originale</a></li>
+            <li><a class="dropdown-item" href="router1.php?action=ameliorationMVC">Proposition d'une amélioration du code MVC</a></li>
           </ul>
         </li>
 
@@ -103,5 +100,3 @@
     </div>
   </div>
 </nav> 
-
-<!-- ----- fin fragmentCaveMenu -->

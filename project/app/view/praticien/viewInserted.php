@@ -1,5 +1,3 @@
-
-<!-- ----- début viewInserted -->
 <?php
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -22,8 +20,4 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     echo("</div>");
     
     include $root . '/app/view/fragment/fragmentDoctolibFooter.html';
-    ?>
-    <!-- ----- fin viewInserted -->    
-
-    
-    
+    ?>  

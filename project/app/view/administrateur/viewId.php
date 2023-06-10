@@ -1,5 +1,3 @@
-
-<!-- ----- début viewId -->
 <?php 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -12,7 +10,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 
       // $results contient un tableau avec la liste des clés.
       ?>
-    <h4 class="text-danger">Sélection spécialité par son id</h4>
+    <h4 class="text-danger">Sélection d'une spécialité par son id</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='specialitesReadOne'>
@@ -31,5 +29,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
   </div>
 
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewId -->

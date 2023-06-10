@@ -1,5 +1,3 @@
-
-<!-- ----- début viewAll -->
 <?php
 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
@@ -15,16 +13,15 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     <table class = "table table-striped table-bordered">
       <thead>
         <tr>
-          <th scope = "col">id</th>
-          <th scope = "col">nom</th>
-          <th scope = "col">prenom</th>
-          <th scope = "col">adresse</th>
-          <th scope = "col">specialite</th>
+          <th scope = "col">Id</th>
+          <th scope = "col">Nom</th>
+          <th scope = "col">Prénom</th>
+          <th scope = "col">Adresse</th>
+          <th scope = "col">Spécialité</th>
         </tr>
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
           foreach ($results as $element) {
               echo("<tr><td>" . $element["id"] . "</td>");
               echo("<td>" . $element["nom"] . "</td>");
@@ -37,8 +34,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     </table>
   </div>
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewAll -->
-  
-  
-  

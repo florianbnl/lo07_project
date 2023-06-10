@@ -1,5 +1,3 @@
-
-<!-- ----- début viewId -->
 <?php 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -10,14 +8,13 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       include $root . '/app/view/fragment/fragmentDoctolibMenu.php';
       include $root . '/app/view/fragment/fragmentDoctolibJumbotron.html';
 
-      // $results contient un tableau avec la liste des clés.
       ?>
     <h4 class="text-danger">Formulaire de connexion</h4>
     <form role="form" method='get' action='router1.php'>
       <div class="form-group">
         <input type="hidden" name='action' value='accueilLogined'>
-        <label class='w-25' for="login">login : </label><input type="text" name='login' value='florian'> <br/>
-        <label class='w-25' for="password">password : </label><input type="password" name='password' value='secret'> <br/> 
+        <label class='w-25' for="login">Login : </label><input type="text" name='login' value='florian'> <br/>
+        <label class='w-25' for="password">Password : </label><input type="password" name='password' value='secret'> <br/> 
       </div>
       <p/><br/>
       <button class="btn btn-primary" type="submit">Submit form</button>
@@ -26,5 +23,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
   </div>
 
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewId -->

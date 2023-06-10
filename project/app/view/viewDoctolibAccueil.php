@@ -1,6 +1,4 @@
- 
-<!-- ----- debut de la page cave_acceuil -->
-<?php include 'fragment/fragmentDoctolibHeader.html'; ?>
+ <?php include 'fragment/fragmentDoctolibHeader.html'; ?>
 <body>
   <div class="container">
     <?php
@@ -13,8 +11,6 @@
   <?php
   include 'fragment/fragmentDoctolibFooter.html';
   ?>
-
-  <!-- ----- fin de la page cave_acceuil -->
 
 </body>
 </html>

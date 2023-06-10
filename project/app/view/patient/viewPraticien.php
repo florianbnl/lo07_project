@@ -1,5 +1,3 @@
-
-<!-- ----- début viewPraticien -->
 <?php 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -10,7 +8,6 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       include $root . '/app/view/fragment/fragmentDoctolibMenu.php';
       include $root . '/app/view/fragment/fragmentDoctolibJumbotron.html';
 
-      // $results contient un tableau avec la liste des clés.
       ?>
     <h4 class="text-danger">Sélection d'un praticien</h4>
     <form role="form" method='get' action='router1.php'>
@@ -31,5 +28,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
   </div>
 
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewPraticien -->

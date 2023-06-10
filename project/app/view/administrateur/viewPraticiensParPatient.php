@@ -1,5 +1,3 @@
-
-<!-- ----- début viewAll -->
 <?php
 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
@@ -33,8 +31,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     </table>
   </div>
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewAll -->
-  
-  
-  

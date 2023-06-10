@@ -1,5 +1,3 @@
-
-<!-- ----- début viewInserted -->
 <?php
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
 ?>
@@ -19,7 +17,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
      echo ("<li>label = " . $_GET['label'] . "</li>");
      echo("</ul>");
     } else {
-     echo ("<h3>Problème d'insertion du Vin</h3>");
+     echo ("<h3>Problème d'insertion de la nouvelle spécialité</h3>");
      echo ("id = " . $_GET['nom']);
     }
 
@@ -27,7 +25,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     
     include $root . '/app/view/fragment/fragmentDoctolibFooter.html';
     ?>
-    <!-- ----- fin viewInserted -->    
-
-    
-    

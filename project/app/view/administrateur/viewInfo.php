@@ -1,5 +1,3 @@
-
-<!-- ----- début viewAll -->
 <?php
 
 require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
@@ -22,7 +20,6 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
           foreach ($results_specialite as $element) {
               echo("<tr><td>" . $element['id'] . "</td>");
               echo("<td>" . $element['label'] . "</td></tr>");
@@ -37,7 +34,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
         <tr>
           <th scope = "col">Id</th>
           <th scope = "col">Nom</th>
-          <th scope = "col">Prenom</th>
+          <th scope = "col">Prénom</th>
           <th scope = "col">Adresse</th>
           <th scope = "col">Specialite</th>
         </tr>
@@ -60,7 +57,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       <thead>
         <tr>
           <th scope = "col">Nom</th>
-          <th scope = "col">Prenom</th>
+          <th scope = "col">Prénom</th>
           <th scope = "col">Adresse</th>
         </tr>
       </thead>
@@ -80,7 +77,7 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       <thead>
         <tr>
           <th scope = "col">Nom</th>
-          <th scope = "col">Prenom</th>
+          <th scope = "col">Prénom</th>
           <th scope = "col">Adresse</th>
         </tr>
       </thead>
@@ -95,20 +92,19 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
       </tbody>
     </table><br>
     
-    <h4 class="text-danger">Liste des rendrez-vous</h4>
+    <h4 class="text-danger">Liste des rendez-vous</h4>
     <table class = "table table-striped table-bordered">
       <thead>
         <tr>
           <th scope = "col">Nom (patient)</th>
-          <th scope = "col">Prenom (patient)</th>
+          <th scope = "col">Prénom (patient)</th>
           <th scope = "col">Nom (praticien)</th>
-          <th scope = "col">Prenom (praticien)</th>
+          <th scope = "col">Prénom (praticien)</th>
           <th scope = "col">rdv_date</th>
         </tr>
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
           foreach ($results_rendezvous as $element) {
               echo("<tr><td>" . $element["nom_patient"] . "</td>");
               echo("<td>" . $element["prenom_patient"] . "</td>");
@@ -121,8 +117,3 @@ require ($root . '/app/view/fragment/fragmentDoctolibHeader.html');
     </table>
   </div>
   <?php include $root . '/app/view/fragment/fragmentDoctolibFooter.html'; ?>
-
-  <!-- ----- fin viewAll -->
-  
-  
-  
