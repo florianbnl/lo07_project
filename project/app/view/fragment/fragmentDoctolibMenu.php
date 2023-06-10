@@ -52,16 +52,16 @@
                         echo("<ul class='dropdown-menu'>");
                         echo("<li><a class='dropdown-item' href='router1?action=specialitesReadAll'>Liste des spécialités</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=selectionDUneSpecialite'>Sélection d'une spécialité par son id</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=specialitesCreate'>Insertion d'une spécialité</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=specialitesCreate'>Insertion d'une spécialité</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=praticienReadSpecialites'>Liste des praticiens avec leur spécialité</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=nombrePraticiensParPatient'>Nombre de praticiens par patient</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=nombrePraticiensParPatient'>Nombre de praticiens par patient</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=administrateurInfo'>Info</a></li>");
                         break;
                     case 1:
                         echo("<a class='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Praticien</a>");
                         echo("<ul class='dropdown-menu'>");
                         echo("<li><a class='dropdown-item' href='router1?action=praticienReadDisponibilite'>Liste des disponibilités</a></li>");
-                        echo("<li><a class='dropdown-item' href='router1?action=ajoutDisponibilites'>Ajout de nouvelles disponibilités</a></li>");
+                        echo("<li><a class='dropdown-item' href='router1?action=ajoutDisponibilites'>Ajout de nouvelles disponibilités</a></li><hr>");
                         echo("<li><a class='dropdown-item' href='router1?action=listeRDVPraticien'>Liste des rendez-vous avec le nom des patients</a></li>");
                         echo("<li><a class='dropdown-item' href='router1?action=listePatients'>Liste de mes patients (sans doublon)</a></li>");
                         break;

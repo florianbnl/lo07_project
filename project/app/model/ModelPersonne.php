@@ -97,7 +97,7 @@ class ModelPersonne {
     public static function getAll($param){
         try{
            $database = Model::getInstance();
-           $query  = "select personne.*, specialite.label as specialite from personne, specialite where statut = $param and specialite.id = personne.specialite_id";
+           $query  = "select personne.*, specialite.label as specialite from personne, specialite where statut = :param and specialite.id = personne.specialite_id";
             $statement = $database->prepare($query);
             $statement->execute([
                 ':param' => $param

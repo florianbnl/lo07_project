@@ -69,7 +69,6 @@ class ControleurRDV {
     
     public static function disponibilitesPraticien(){
         $results = ModelRDV::getPraticienDisponibilite($_GET['id']);
-        print_r($results);
         include 'config.php';
         $vue = $root . '/app/view/patient/viewRDVPraticien.php';
         if (DEBUG){
@@ -79,7 +78,6 @@ class ControleurRDV {
     }
     
     public static function RDVAjoutPatient(){
-        print_r($_GET);
         $results = ModelRDV::modify(htmlspecialchars($_GET['praticien_id']), htmlspecialchars($_GET['rdv_date']));
         include 'config.php';
         $vue = $root . '/app/view/viewDoctolibAccueil.php';
