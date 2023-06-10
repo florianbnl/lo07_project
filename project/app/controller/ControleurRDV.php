@@ -1,4 +1,3 @@
-<!-- début ControleurRDV-->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -9,10 +8,10 @@ class ControleurRDV {
     
     public static function praticienReadDisponibilite(){
         include 'config.php';
-        $results = ModelRDV::getPraticienDisponibilite($_SESSION['login']->getId());//ça marche !
+        $results = ModelRDV::getPraticienDisponibilite($_SESSION['login']->getId());
         $vue = $root . '/app/view/praticien/viewDisponibilites.php';
         if (DEBUG){
-            echo("ControleurPraticien : viewDisponibilite : vue = $vue");
+            echo("ControleurRDV : praticienReadDisponibilite : vue = $vue");
         }
         require ($vue);
     }
@@ -23,13 +22,9 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root. '/app/view/praticien/viewInsert.php';
         if (DEBUG){
-            echo("ControleurPraticien : ajoutDisponibilites : vue = $vue");
+            echo("ControleurRDV : ajoutDisponibilites : vue = $vue");
         }
         require($vue);
-    }
-    
-    public static function integrationNouvellesDisponibilites(){
-        //fct qui crée les nouvelles dispos
     }
     
     public static function listeRDVPraticien(){
@@ -37,7 +32,7 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root . '/app/view/praticien/viewAllRdv.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listeRDVPraticien : vue = $vue");
+            echo("ControleurRDV : listeRDVPraticien : vue = $vue");
         }
         require ($vue);
     }
@@ -47,7 +42,7 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root . '/app/view/patient/viewAllRdv.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
+            echo("ControleurRDV : listeRDVPatient : vue = $vue");
         }
         require ($vue);
     }
@@ -67,7 +62,7 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root . '/app/view/patient/viewPraticien.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
+            echo("ControleurRDV : priseDeRDV : vue = $vue");
         }
         require ($vue);
     }
@@ -78,7 +73,7 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root . '/app/view/patient/viewRDVPraticien.php';
         if (DEBUG){
-            echo("ControleurAdministrateur : listeRDVPatient : vue = $vue");
+            echo("ControleurRDV : disponibilitesPraticien : vue = $vue");
         }
         require ($vue);
     }
@@ -89,10 +84,9 @@ class ControleurRDV {
         include 'config.php';
         $vue = $root . '/app/view/viewDoctolibAccueil.php';
         if (DEBUG){
-             echo("ControllerRDV : RDVajoutPatient : vue = $vue");
+             echo("ControleurRDV : RDVajoutPatient : vue = $vue");
         }
         require ($vue);
     }
 }
 ?>
-<!-- fin ControleurRDV-->

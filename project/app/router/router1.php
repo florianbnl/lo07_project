@@ -22,7 +22,6 @@ switch ($action) {
  case "doctolibAccueil":
  case "accueilDeconnexion":
  case "accueilInscription":
- case "accueilInscription":
  case "accueilInscrire":
  case "accueilLogin":
  case "accueilLogined":
@@ -55,7 +54,6 @@ switch ($action) {
  
  case "praticienReadDisponibilite":
  case "ajoutDisponibilites":
- case "integrationNouvellesDisponibilites":
  case "listeRDVPraticien":
  case "listeRDVPatient":
  case "priseDeRDV":

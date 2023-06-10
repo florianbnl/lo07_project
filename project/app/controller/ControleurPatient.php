@@ -1,4 +1,3 @@
-<!-- début ControleurPatient -->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -11,11 +10,10 @@ class ControleurPatient {
         include 'config.php';
         $vue = $root . '/app/view/patient/viewMonCompte.php';
         if (DEBUG){
-            echo("ControleurPatient : PatientReadInfo : vue = $vue");
+            echo("ControleurPatient : patientReadInfo : vue = $vue");
         }
         require($vue);
     }
     
 }
 ?>
-<!-- fin ControleurPatient -->

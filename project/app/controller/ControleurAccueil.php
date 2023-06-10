@@ -1,4 +1,3 @@
-<!-- début ControleurAcceuil-->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -11,7 +10,7 @@ class ControleurAccueil {
         include 'config.php';
         $vue = $root . '/app/view/viewDoctolibAccueil.php';
         if (DEBUG){
-             echo("ControllerAccueil : DoctolibAccueil : vue = $vue");
+             echo("ControleurAccueil : doctolibAccueil : vue = $vue");
         }
         require ($vue);
     }
@@ -21,7 +20,7 @@ class ControleurAccueil {
         $_SESSION['login'] = "vide";
         $vue = $root . '/app/view/viewDoctolibAccueil.php';
         if (DEBUG){
-             echo("ControllerAccueil : DoctolibAccueil : vue = $vue");
+             echo("ControleurAccueil : accueilDeconnexion : vue = $vue");
         }
         require ($vue);
     }
@@ -31,7 +30,7 @@ class ControleurAccueil {
         include 'config.php';
         $vue = $root . '/app/view/seconnecter/viewInscription.php';
         if (DEBUG){
-             echo("ControleurAccueil : AccueilInscription : vue = $vue");
+             echo("ControleurAccueil : accueilInscription : vue = $vue");
         }
         require ($vue);
     }
@@ -54,7 +53,7 @@ class ControleurAccueil {
         include 'config.php';
         $vue = $root . 'app/view/seconnecter/viewLogin.php';
         if (DEBUG){
-             echo("ControllerAccueil : AccueilLogin : vue = $vue");
+             echo("ControleurAccueil : accueilLogin : vue = $vue");
         }
         require($vue);
     }
@@ -69,7 +68,7 @@ class ControleurAccueil {
             $vue = $root . '/app/view/seconnecter/viewLogin.php';
         }
         if (DEBUG){
-             echo("ControllerAccueil : AccueilLogined : vue = $vue");
+             echo("ControleurAccueil : accueilLogined : vue = $vue");
         }
         require($vue);
     }
@@ -79,10 +78,9 @@ class ControleurAccueil {
         include 'config.php';
         $vue = $root . 'app/view/innovations/viewInnovation.php';
         if (DEBUG){
-             echo("ControllerAccueil : AccueilLogin : vue = $vue");
+             echo("ControleurAccueil : accueilInnovation : vue = $vue");
         }
         require($vue);
     }
 }
 ?>
-<!-- fin ControleurAcceuil-->

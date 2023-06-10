@@ -1,4 +1,3 @@
-<!-- début ControleurSpecialites -->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -65,4 +64,3 @@ class ControleurSpecialites {
     
 }
 ?>
-<!-- fin ControleurSpecialites -->

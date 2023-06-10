@@ -1,4 +1,3 @@
-<!-- début ControleurrAdministrateur -->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -23,7 +22,7 @@ class ControleurAdministrateur {
     }
     
     public static function listePraticiensAvecSpecialite(){
-        $results = ModelPersonne::getAll(1);//1 car on veut les praticiens
+        $results = ModelPersonne::getAll(ModelPersonne::PRATICIEN);
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewPraticiensAvecSpecialites.php';
         if (DEBUG){
@@ -44,5 +43,3 @@ class ControleurAdministrateur {
     
 }
 ?>
-
-<!-- fin ControleurAdministrateur -->

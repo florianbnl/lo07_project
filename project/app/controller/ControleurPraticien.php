@@ -1,4 +1,3 @@
-<!-- début ControleurPraticien -->
 <?php
 
 require_once '../model/ModelPersonne.php';
@@ -12,7 +11,7 @@ class ControleurPraticien {
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewPraticien.php';
         if (DEBUG){
-            echo("ControleurPraticien : PraticienreadSpecialites : vue = $vue");
+            echo("ControleurPraticien : praticienReadSpecialites : vue = $vue");
         }
         require ($vue);
     }
