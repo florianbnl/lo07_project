@@ -92,5 +92,16 @@ class ControleurAccueil {
         }
         require($vue);
     }
+    
+    public static function ameliorationMVC(){
+        $results = ModelSpecialite::getAll();
+        array_shift($results);
+        include 'config.php';
+        $vue = $root . '/app/view/innovations/viewMVC.php';
+        if (DEBUG){
+             echo("ControleurAccueil : ameliorationMVC : vue = $vue");
+        }
+        require ($vue);
+    }
 }
 ?>

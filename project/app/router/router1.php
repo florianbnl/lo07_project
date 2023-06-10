@@ -24,6 +24,7 @@ switch ($action) {
  case "accueilLogin":
  case "accueilLogined":
  case "accueilInnovation":
+ case "ameliorationMVC":
      ControleurAccueil::$action();
      break;
 
