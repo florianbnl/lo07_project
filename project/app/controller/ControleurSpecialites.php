@@ -37,14 +37,20 @@ class ControleurSpecialites {
     }
     
     public static function specialitesCreated(){
-        $results = ModelSpecialite::insert(htmlspecialchars($_GET['label']));
-        
-        include 'config.php';
-        $vue = $root . '/app/view/administrateur/viewInserted.php';
-        if (DEBUG){
-            echo("ControleurSpecialites : SpecialitesCreated : vue = $vue");
+        $valeur = $_GET['label'];
+        if (Model::verifyInputString($valeur) == 0){
+            ControleurSpecialites::specialitesCreate();
         }
-        require ($vue);
+        else {
+            $results = ModelSpecialite::insert(htmlspecialchars($_GET['label']));
+            include 'config.php';
+            $vue = $root . '/app/view/administrateur/viewInserted.php';
+            if (DEBUG){
+                echo("ControleurSpecialites : SpecialitesCreated : vue = $vue");
+            }
+            require ($vue);
+        }
+        
     }
     
     public static function convertIdSpecialiteToString($id){

@@ -48,13 +48,21 @@ class ControleurRDV {
     }
     
     public static function disponibilitesAjoutees(){
-        $results = ModelRDV::disponibilitesAjoutees();
-        include 'config.php';
-        $vue = $root . '/app/view/praticien/viewInserted.php';
-        if (DEBUG){
-            echo("ControleurRDV : disponibilitesAjoutees : vue = $vue");
+        $valeur = $_GET['rdv_nombre'];
+        $date = $_GET['rdv_date'];
+        if (Model::verifyInputInt($valeur) == 0 || Model::verifyInputDate($date) == 0){
+            ControleurRDV::ajoutDisponibilites();
         }
-        require ($vue);
+        else {
+            $results = ModelRDV::disponibilitesAjoutees();
+            include 'config.php';
+            $vue = $root . '/app/view/praticien/viewInserted.php';
+            if (DEBUG){
+                echo("ControleurRDV : disponibilitesAjoutees : vue = $vue");
+            }
+            require ($vue);
+        }
+        
     }
     
     public static function priseDeRDV(){

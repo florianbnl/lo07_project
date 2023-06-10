@@ -165,7 +165,7 @@ class ModelPersonne {
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             $praticiensInfo = [];
             foreach ($results as $element){
-                $element["specialite"] = ControleurSpecialites::convertIdSpecialiteToString(htmlspecialchars($element['specialite_id']));
+                $element["specialite"] = ModelSpecialite::convertIdSpecialiteToString(htmlspecialchars($element['specialite_id']));
                 $praticiensInfo[] = $element;
             }
             return $praticiensInfo;
