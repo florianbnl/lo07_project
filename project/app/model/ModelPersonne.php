@@ -156,25 +156,6 @@ class ModelPersonne {
         }
     }
     
-    public static function getPraticiensInfo(){
-        try{
-            $database = Model::getInstance();
-            $query = "select * from personne where statut = 1";
-            $statement = $database->prepare($query);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $praticiensInfo = [];
-            foreach ($results as $element){
-                $element["specialite"] = ModelSpecialite::convertIdSpecialiteToString(htmlspecialchars($element['specialite_id']));
-                $praticiensInfo[] = $element;
-            }
-            return $praticiensInfo;
-        } catch (Exception $ex) {
-             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
-            return NULL;
-        }
-    }
-    
     public static function getPasswordLogin($login, $password){
         try{
             $database = Model::getInstance();

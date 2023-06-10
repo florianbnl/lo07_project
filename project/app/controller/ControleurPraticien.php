@@ -7,7 +7,7 @@ require_once '../model/ModelRDV.php';
 class ControleurPraticien {
     
     public static function praticienReadSpecialites(){
-        $results = ModelPersonne::getPraticiensInfo();
+        $results = ModelPersonne::getAll(ModelPersonne::PRATICIEN);
         include 'config.php';
         $vue = $root . '/app/view/administrateur/viewPraticien.php';
         if (DEBUG){

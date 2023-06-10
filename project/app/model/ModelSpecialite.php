@@ -99,30 +99,6 @@ class ModelSpecialite {
              return -1;
          }
      }
-     
-     public static function convertIdSpecialiteToString($id){
-         try{
-             $database = Model::getInstance();
-
-             $query = "select label from specialite where id = :id";
-             $statement = $database->prepare($query);
-             $statement->execute([
-                 ':id' => $id,
-             ]);
-             $rowCount = $statement->rowCount();
-             if($rowCount > 0){
-                 $row = $statement->fetch(PDO::FETCH_ASSOC);
-                 return $row["label"];
-             }
-             else{
-                 return "Spécialité introuvable";
-             }
-             return $statement;
-         } catch (Exception $ex) {
-             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
-             return -1;
-         }
-     }
 
 
 }

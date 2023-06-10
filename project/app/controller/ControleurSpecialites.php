@@ -53,10 +53,6 @@ class ControleurSpecialites {
         
     }
     
-    public static function convertIdSpecialiteToString($id){
-        $specialite = ModelSpecialite::convertIdSpecialiteToString($id);
-        return $specialite;
-    }
     
     public static function selectionDUneSpecialite(){
         $results = ModelSpecialite::getAllId();
