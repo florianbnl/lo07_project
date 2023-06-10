@@ -1,6 +1,3 @@
-
-<!-- ----- debut ModelRDV -->
-
 <?php
 require_once 'Model.php';
 
@@ -77,7 +74,7 @@ class ModelRDV {
         }
     }
     
-    public static function disponibilitesAjoutees(){ //format --> (9, 0, 50, '2023-05-22 à 18h00')
+    public static function disponibilitesAjoutees(){
         $rdv_date = $_GET['rdv_date'];
         $rdv_nombre = $_GET['rdv_nombre'];
         $praticien_id = $_SESSION['login']->getId();
@@ -155,7 +152,7 @@ class ModelRDV {
             }
         } catch (Exception $ex) {
             printf("%s - %s<p/>\n", $ex->getCode(), $ex->getMessage());
-
+            return NULL;
         }
     }
           
@@ -228,4 +225,3 @@ class ModelRDV {
 }
 
 ?>
-<!-- ----- fin ModelRDV -->

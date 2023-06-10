@@ -1,6 +1,3 @@
-
-<!-- ----- debut ModelSpecialite -->
-
 <?php
 require_once 'Model.php';
 
@@ -131,4 +128,3 @@ class ModelSpecialite {
 }
 
 ?>
-<!-- ----- fin ModelSpecialite -->

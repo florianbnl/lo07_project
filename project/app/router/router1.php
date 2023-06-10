@@ -1,5 +1,3 @@
-
-<!-- ----- debut Router1 -->
 <?php
 require ('../controller/ControleurAccueil.php');
 require ('../controller/ControleurAdministrateur.php');
@@ -69,5 +67,3 @@ switch ($action) {
      ControleurAccueil::$action();
 }
 ?>
-<!-- ----- Fin Router1 -->
-

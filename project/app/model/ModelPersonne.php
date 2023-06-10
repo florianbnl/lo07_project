@@ -120,10 +120,10 @@ class ModelPersonne {
             ]);
             $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelPersonne");
             return $results;
-           } catch (PDOException $e) {
-            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-            return NULL;
-           }
+        } catch (PDOException $e) {
+         printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+         return NULL;
+        }
     }
 
     public static function getNombrePraticiensParPatient(){

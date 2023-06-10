@@ -1,5 +1,3 @@
-
-<!-- ----- debut Model -->
 <?php
 session_start();
 
@@ -40,4 +38,3 @@ class Model extends PDO {
 
 }
 ?>
-<!-- ----- fin Model -->
