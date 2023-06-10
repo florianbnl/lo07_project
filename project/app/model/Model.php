@@ -47,10 +47,10 @@ class Model extends PDO {
 
     }
  
-    public static function verifyInputInt($valeur){
+    public static function verifyInputInt($valeur, $min, $max){
        if (isset($valeur)) {
            $response = trim($valeur);
-           if (!empty($response) && is_numeric($response) && $response >= 1 && $response <= 10) {
+           if (!empty($response) && is_numeric($response) && $response >= $min && $response <= $max) {
                return 1;
            } else {
                return 0;

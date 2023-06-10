@@ -50,7 +50,7 @@ class ControleurRDV {
     public static function disponibilitesAjoutees(){
         $valeur = $_GET['rdv_nombre'];
         $date = $_GET['rdv_date'];
-        if (Model::verifyInputInt($valeur) == 0 || Model::verifyInputDate($date) == 0){
+        if (Model::verifyInputInt($valeur, 1, 10) == 0 || Model::verifyInputDate($date) == 0){
             ControleurRDV::ajoutDisponibilites();
         }
         else {

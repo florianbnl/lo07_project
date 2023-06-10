@@ -36,17 +36,27 @@ class ControleurAccueil {
     }
     
     public static function accueilInscrire(){
-        $verif = ModelPersonne::getVerifyLogin(htmlspecialchars($_GET['login']));
-        include 'config.php';
-        if ($verif == 0){
-            $results = ModelPersonne::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['adresse']), htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']), htmlspecialchars($_GET['statut']), htmlspecialchars($_GET['specialite_id'])); 
-            $vue = $root . '/app/view/viewDoctolibAccueil.php';
+        $nom = $_GET['nom'];
+        $prenom = $_GET['prenom'];
+        $adresse = $_GET['adresse'];
+        $login = $_GET['login'];
+        $password = $_GET['password'];
+        if (Model::verifyInputString($nom) == 0 || Model::verifyInputString($prenom) == 0 || Model::verifyInputString($adresse) == 0 || Model::verifyInputString($login) == 0 || Model::verifyInputString($password) == 0){
+                ControleurAccueil::accueilInscription();
+        } else{
+            $verif = ModelPersonne::getVerifyLogin(htmlspecialchars($_GET['login']));// vérifie si le login n'est pas déjà utilisé par qqn d'autre
+            include 'config.php';
+            if ($verif == 0){
+                $results = ModelPersonne::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['adresse']), htmlspecialchars($_GET['login']), htmlspecialchars($_GET['password']), htmlspecialchars($_GET['statut']), htmlspecialchars($_GET['specialite_id'])); 
+                $vue = $root . '/app/view/viewDoctolibAccueil.php';
+            } else{
+                $results = ModelSpecialite::getAll();
+                $vue = $root . '/app/view/seconnecter/viewInscription.php'; 
+            }
+            require($vue);
+        
         }
-        else{
-            $results = ModelSpecialite::getAll();
-            $vue = $root . '/app/view/seconnecter/viewInscription.php'; 
-        }
-        require($vue);
+        
     }
     
     public static function accueilLogin(){
