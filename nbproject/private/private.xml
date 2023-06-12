@@ -4,29 +4,31 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/Model.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurRDV.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPraticien.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/seconnecter/viewInscription.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllRdv.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewDisponibilites.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllPatients.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/router/router1.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPatient.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewInserted.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelRDV.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewId.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAccueil.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibMenu.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelPersonne.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/config.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/model/ModelSpecialite.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurSpecialites.php</file>
-            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/innovations/viewInnovation.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibJumbotron.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/fragment/fragmentDoctolibHeader.html</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/outil/doctolib_base.sql</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/administrateur/viewPraticien.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAdministrateur.php</file>
             <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/index.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurRDV.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/seconnecter/viewInscription.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewDisponibilites.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/praticien/viewAllPatients.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/router/router1.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurPatient.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/ControleurAccueil.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/innovations/viewMVC.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/controller/config.php</file>
+            <file>file:/C:/Users/fbone/Documents/NetBeansProjects/lo07_project/project/app/view/innovations/viewInnovation.php</file>
         </group>
     </open-files>
 </project-private>
